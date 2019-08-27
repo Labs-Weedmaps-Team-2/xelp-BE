@@ -1,2 +1,24 @@
-# xelp-BE
-Find adult-friendly things to do in your city. Suggesting popular bars/breweries/wineries/venues in your area. Not all adults like to be around families and kids when they are going out.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
