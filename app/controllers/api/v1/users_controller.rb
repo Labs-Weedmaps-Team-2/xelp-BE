@@ -9,8 +9,7 @@ module Api
      end
 
      def show
-      @user = User.find(params[:id])
-
+      @user ||= User.find(session[:session_id] ||= params[:id])
       render json: @user
     end
 

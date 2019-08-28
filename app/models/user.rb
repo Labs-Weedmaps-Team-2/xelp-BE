@@ -7,7 +7,5 @@ class User < ApplicationRecord
         user.username = auth["info"]["nickname"]
         user.photo = auth["info"]['image']
       end
-      user.save
-      user
     end
 end
