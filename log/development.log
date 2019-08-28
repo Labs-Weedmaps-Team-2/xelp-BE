@@ -1482,3 +1482,607 @@ Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms)
   ↳ db/seeds.rb:5
   [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:5
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (29.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "vida.rempel"], ["email", "millard@wuckert.biz"], ["photo", "https://robohash.org/autiustodolor.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.197473"], ["updated_at", "2019-08-28 01:28:49.197473"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "gabriele_cummerata"], ["email", "daren_senger@abernathyschamberger.biz"], ["photo", "https://robohash.org/maximeestsunt.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.214322"], ["updated_at", "2019-08-28 01:28:49.214322"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (25.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dale.heller"], ["email", "yasmine@reichel.org"], ["photo", "https://robohash.org/reprehenderitexplicaboiste.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.243155"], ["updated_at", "2019-08-28 01:28:49.243155"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "ernie"], ["email", "ming@gibson.org"], ["photo", "https://robohash.org/corporisofficiisaperiam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.245918"], ["updated_at", "2019-08-28 01:28:49.245918"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "oliver"], ["email", "dewey@mueller.io"], ["photo", "https://robohash.org/voluptasnamdolores.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.250016"], ["updated_at", "2019-08-28 01:28:49.250016"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "joni"], ["email", "trudy@creminhyatt.io"], ["photo", "https://robohash.org/cumquedolorofficiis.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.252472"], ["updated_at", "2019-08-28 01:28:49.252472"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "miquel.oberbrunner"], ["email", "quintin.haag@berge.com"], ["photo", "https://robohash.org/voluptatemfaceresunt.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.255305"], ["updated_at", "2019-08-28 01:28:49.255305"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hui"], ["email", "jeenia@runte.io"], ["photo", "https://robohash.org/dolorcumaut.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.258535"], ["updated_at", "2019-08-28 01:28:49.258535"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (25.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (6.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hellen"], ["email", "eneida@glovermosciski.name"], ["photo", "https://robohash.org/consequaturfugavel.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.293287"], ["updated_at", "2019-08-28 01:28:49.293287"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "meri"], ["email", "basil.little@lubowitz.co"], ["photo", "https://robohash.org/quinemoexplicabo.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.302822"], ["updated_at", "2019-08-28 01:28:49.302822"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dewitt"], ["email", "tonja.steuber@dickens.io"], ["photo", "https://robohash.org/doloresaliasaccusantium.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.306029"], ["updated_at", "2019-08-28 01:28:49.306029"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "clementine_feeney"], ["email", "norris_torphy@wisozkshanahan.org"], ["photo", "https://robohash.org/minimamaximeut.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.310878"], ["updated_at", "2019-08-28 01:28:49.310878"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "sandy_wilderman"], ["email", "jackson.nader@heelbogisich.biz"], ["photo", "https://robohash.org/liberonequedolorum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.343945"], ["updated_at", "2019-08-28 01:28:49.343945"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "colby"], ["email", "erick@howell.net"], ["photo", "https://robohash.org/atenimet.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.347195"], ["updated_at", "2019-08-28 01:28:49.347195"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "herschel_rolfson"], ["email", "louis.gerlach@gerlach.info"], ["photo", "https://robohash.org/officiisadipiscireiciendis.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.351823"], ["updated_at", "2019-08-28 01:28:49.351823"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "margarita.durgan"], ["email", "freda.oconnell@yost.org"], ["photo", "https://robohash.org/numquamundesit.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.355097"], ["updated_at", "2019-08-28 01:28:49.355097"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bianca_corkery"], ["email", "val@hammes.info"], ["photo", "https://robohash.org/voluptascumquequisquam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.362270"], ["updated_at", "2019-08-28 01:28:49.362270"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (25.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "isa"], ["email", "leone@altenwerth.co"], ["photo", "https://robohash.org/etcorporisdolorem.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.366699"], ["updated_at", "2019-08-28 01:28:49.366699"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "frankie_considine"], ["email", "otto.jacobi@weinat.net"], ["photo", "https://robohash.org/etetet.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.395007"], ["updated_at", "2019-08-28 01:28:49.395007"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (11.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "karl"], ["email", "leif_bednar@pfannerstill.biz"], ["photo", "https://robohash.org/isteestminus.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.398222"], ["updated_at", "2019-08-28 01:28:49.398222"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "gary"], ["email", "thomas@towne.org"], ["photo", "https://robohash.org/inquosfugiat.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.413720"], ["updated_at", "2019-08-28 01:28:49.413720"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "samuel"], ["email", "erich.wintheiser@hackettgislason.co"], ["photo", "https://robohash.org/doloremsitqui.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.443178"], ["updated_at", "2019-08-28 01:28:49.443178"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "viviana"], ["email", "soledad@schambergerdonnelly.org"], ["photo", "https://robohash.org/placeatinventoreeaque.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.446933"], ["updated_at", "2019-08-28 01:28:49.446933"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "noel.emard"], ["email", "claud_durgan@miller.biz"], ["photo", "https://robohash.org/totamaliaslabore.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.450159"], ["updated_at", "2019-08-28 01:28:49.450159"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eusebia"], ["email", "mackenzie@hartmann.biz"], ["photo", "https://robohash.org/aperiammolestiasconsequatur.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.452820"], ["updated_at", "2019-08-28 01:28:49.452820"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "damian"], ["email", "colin_moore@dibbertvon.biz"], ["photo", "https://robohash.org/deseruntofficiaet.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.455388"], ["updated_at", "2019-08-28 01:28:49.455388"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "clemente.ryan"], ["email", "eugenia@rutherford.com"], ["photo", "https://robohash.org/noncommodidignissimos.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.460695"], ["updated_at", "2019-08-28 01:28:49.460695"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (25.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "twyla"], ["email", "thad_anderson@berge.net"], ["photo", "https://robohash.org/quipraesentiumet.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.492562"], ["updated_at", "2019-08-28 01:28:49.492562"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "nigel.sporer"], ["email", "louie_senger@beahan.biz"], ["photo", "https://robohash.org/molestiaeutminus.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.495415"], ["updated_at", "2019-08-28 01:28:49.495415"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "jeremiah"], ["email", "stacy@windler.com"], ["photo", "https://robohash.org/atquerepellendussimilique.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.499382"], ["updated_at", "2019-08-28 01:28:49.499382"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "joe_larson"], ["email", "jacques@barton.org"], ["photo", "https://robohash.org/itaquesuntdignissimos.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.506994"], ["updated_at", "2019-08-28 01:28:49.506994"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (27.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dominque"], ["email", "jeremy@gutkowskihudson.net"], ["photo", "https://robohash.org/reprehenderitsolutarecusandae.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.516052"], ["updated_at", "2019-08-28 01:28:49.516052"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "norberto.oconnell"], ["email", "chelsey@witting.org"], ["photo", "https://robohash.org/explicaboatsunt.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.546159"], ["updated_at", "2019-08-28 01:28:49.546159"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "angelique"], ["email", "antwan@wilkinson.org"], ["photo", "https://robohash.org/veniambeataequae.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.549643"], ["updated_at", "2019-08-28 01:28:49.549643"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mohamed"], ["email", "sergio_halvorson@cronin.io"], ["photo", "https://robohash.org/suntducimusid.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.556982"], ["updated_at", "2019-08-28 01:28:49.556982"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "stanton.bins"], ["email", "larry@conroyleannon.net"], ["photo", "https://robohash.org/voluptatemidullam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.560276"], ["updated_at", "2019-08-28 01:28:49.560276"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "raul"], ["email", "woodrow@nader.org"], ["photo", "https://robohash.org/rerumsitsunt.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.564188"], ["updated_at", "2019-08-28 01:28:49.564188"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (27.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "diedra"], ["email", "rudolph@flatley.io"], ["photo", "https://robohash.org/laboreaccusamusqui.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.594820"], ["updated_at", "2019-08-28 01:28:49.594820"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (9.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "aleida"], ["email", "tula_bernier@tillman.co"], ["photo", "https://robohash.org/corruptinisiqui.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.601743"], ["updated_at", "2019-08-28 01:28:49.601743"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "carter"], ["email", "agnus.bogisich@champlin.name"], ["photo", "https://robohash.org/utnamtotam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.615564"], ["updated_at", "2019-08-28 01:28:49.615564"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "nicolette_schulist"], ["email", "fletcher@adamsborer.info"], ["photo", "https://robohash.org/beataeetcum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.654177"], ["updated_at", "2019-08-28 01:28:49.654177"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "denita_quigley"], ["email", "nydia@durgan.org"], ["photo", "https://robohash.org/adquiaassumenda.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.658257"], ["updated_at", "2019-08-28 01:28:49.658257"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (25.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "rigoberto"], ["email", "synthia.boyer@breitenbergtromp.info"], ["photo", "https://robohash.org/etestquia.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.666965"], ["updated_at", "2019-08-28 01:28:49.666965"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "carlo_block"], ["email", "song@hyatt.co"], ["photo", "https://robohash.org/facerererumbeatae.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.694549"], ["updated_at", "2019-08-28 01:28:49.694549"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "peter.nader"], ["email", "carri@smithbednar.com"], ["photo", "https://robohash.org/dictaomnisnatus.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.698128"], ["updated_at", "2019-08-28 01:28:49.698128"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "irena_brakus"], ["email", "bambi@bashirianwilliamson.net"], ["photo", "https://robohash.org/voluptasetut.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.701195"], ["updated_at", "2019-08-28 01:28:49.701195"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "tanner"], ["email", "marshall@kunzealtenwerth.io"], ["photo", "https://robohash.org/doloripsumeos.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.707405"], ["updated_at", "2019-08-28 01:28:49.707405"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "sari.will"], ["email", "rory@davis.net"], ["photo", "https://robohash.org/quiquaeratnostrum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.747583"], ["updated_at", "2019-08-28 01:28:49.747583"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "harriett"], ["email", "dick.satterfield@hamillorn.biz"], ["photo", "https://robohash.org/rerumcumqueullam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.750240"], ["updated_at", "2019-08-28 01:28:49.750240"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "donita"], ["email", "galen.wolf@senger.name"], ["photo", "https://robohash.org/quaeratrepellendusquae.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.753984"], ["updated_at", "2019-08-28 01:28:49.753984"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mariella_ebert"], ["email", "lamont@hahnterry.io"], ["photo", "https://robohash.org/seddoloremdistinctio.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.757394"], ["updated_at", "2019-08-28 01:28:49.757394"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (25.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "titus"], ["email", "blake.conn@dietrich.io"], ["photo", "https://robohash.org/autvelmollitia.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.792661"], ["updated_at", "2019-08-28 01:28:49.792661"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "damian.kub"], ["email", "georgann@schuster.info"], ["photo", "https://robohash.org/exercitationemomnisamet.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.798113"], ["updated_at", "2019-08-28 01:28:49.798113"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "shana.hagenes"], ["email", "elisha@batzweber.org"], ["photo", "https://robohash.org/teneturlaborerepellat.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.803449"], ["updated_at", "2019-08-28 01:28:49.803449"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (31.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "florene"], ["email", "merle@bode.net"], ["photo", "https://robohash.org/quoaspernaturvoluptate.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.809305"], ["updated_at", "2019-08-28 01:28:49.809305"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "drew_bayer"], ["email", "zachery.cole@wintheiserbosco.io"], ["photo", "https://robohash.org/temporeeosinventore.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.846917"], ["updated_at", "2019-08-28 01:28:49.846917"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "jee"], ["email", "vernon@willms.biz"], ["photo", "https://robohash.org/ipsumadipisciquam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.854404"], ["updated_at", "2019-08-28 01:28:49.854404"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "tod"], ["email", "aurelia@cristfeest.biz"], ["photo", "https://robohash.org/atnamest.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.859382"], ["updated_at", "2019-08-28 01:28:49.859382"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "fred"], ["email", "van@kaulke.io"], ["photo", "https://robohash.org/abautplaceat.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.863068"], ["updated_at", "2019-08-28 01:28:49.863068"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "cristen"], ["email", "lashunda_lesch@hackett.com"], ["photo", "https://robohash.org/doloremquedictaqui.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.865894"], ["updated_at", "2019-08-28 01:28:49.865894"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (25.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "shannon"], ["email", "terra@braunrempel.co"], ["photo", "https://robohash.org/velautitaque.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.893900"], ["updated_at", "2019-08-28 01:28:49.893900"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "vincent"], ["email", "andres@nitzschebosco.co"], ["photo", "https://robohash.org/occaecativitaevelit.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.897324"], ["updated_at", "2019-08-28 01:28:49.897324"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "art"], ["email", "chuck@crist.io"], ["photo", "https://robohash.org/auteligendised.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.900315"], ["updated_at", "2019-08-28 01:28:49.900315"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "christopher"], ["email", "roderick@christiansenheel.biz"], ["photo", "https://robohash.org/similiquevoluptatemtempora.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.903802"], ["updated_at", "2019-08-28 01:28:49.903802"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "parthenia.feil"], ["email", "sammie@hahnschroeder.co"], ["photo", "https://robohash.org/nostrumipsased.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.907221"], ["updated_at", "2019-08-28 01:28:49.907221"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "magdalene"], ["email", "sharleen@schinner.biz"], ["photo", "https://robohash.org/doloribusquisquibusdam.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.910484"], ["updated_at", "2019-08-28 01:28:49.910484"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (26.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "emeline"], ["email", "arden@rippin.net"], ["photo", "https://robohash.org/utquodconsequatur.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.916347"], ["updated_at", "2019-08-28 01:28:49.916347"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "charlette"], ["email", "magaret.wehner@carter.io"], ["photo", "https://robohash.org/quitemporemolestiae.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.945436"], ["updated_at", "2019-08-28 01:28:49.945436"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "carli.mayer"], ["email", "johnny_kreiger@goyette.info"], ["photo", "https://robohash.org/voluptasnequefugiat.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.948612"], ["updated_at", "2019-08-28 01:28:49.948612"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dreama.nienow"], ["email", "maudie@cormiergleichner.co"], ["photo", "https://robohash.org/sintquivoluptatum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.951480"], ["updated_at", "2019-08-28 01:28:49.951480"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "claudio.sipes"], ["email", "thaddeus@ryan.info"], ["photo", "https://robohash.org/etaexcepturi.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.954883"], ["updated_at", "2019-08-28 01:28:49.954883"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "neville.champlin"], ["email", "catina_weinat@lynch.io"], ["photo", "https://robohash.org/ullamundeassumenda.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.958239"], ["updated_at", "2019-08-28 01:28:49.958239"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "paris_hilpert"], ["email", "chas@ledner.net"], ["photo", "https://robohash.org/omnisminusea.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.961499"], ["updated_at", "2019-08-28 01:28:49.961499"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "elisha"], ["email", "lahoma@marvin.info"], ["photo", "https://robohash.org/utesseeum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.964748"], ["updated_at", "2019-08-28 01:28:49.964748"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "maddie_boyle"], ["email", "monte@krajcik.io"], ["photo", "https://robohash.org/quivoluptatemaut.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.994348"], ["updated_at", "2019-08-28 01:28:49.994348"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "raymon"], ["email", "sharen@hermistonkuhic.org"], ["photo", "https://robohash.org/dolorumquiqui.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:49.998756"], ["updated_at", "2019-08-28 01:28:49.998756"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "criselda.schultz"], ["email", "marylin_borer@bailey.com"], ["photo", "https://robohash.org/adipisciealabore.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.001964"], ["updated_at", "2019-08-28 01:28:50.001964"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (36.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "chanda_feil"], ["email", "deandrea@kub.co"], ["photo", "https://robohash.org/autnullalaborum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.005444"], ["updated_at", "2019-08-28 01:28:50.005444"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "theo"], ["email", "dario@bruen.biz"], ["photo", "https://robohash.org/quitotamaut.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.044726"], ["updated_at", "2019-08-28 01:28:50.044726"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dannie_block"], ["email", "reed@schinnerweinat.co"], ["photo", "https://robohash.org/veldolorequi.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.051586"], ["updated_at", "2019-08-28 01:28:50.051586"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "domenic_reilly"], ["email", "meryl.crist@ledner.co"], ["photo", "https://robohash.org/sedrepudiandaevero.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.054652"], ["updated_at", "2019-08-28 01:28:50.054652"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mohamed"], ["email", "kelley@nikolaus.io"], ["photo", "https://robohash.org/doloresrecusandaeillum.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.058122"], ["updated_at", "2019-08-28 01:28:50.058122"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (25.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mitchell"], ["email", "zula@lynch.info"], ["photo", "https://robohash.org/rerumeosnon.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.092410"], ["updated_at", "2019-08-28 01:28:50.092410"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "kendall_feest"], ["email", "burton@bogan.biz"], ["photo", "https://robohash.org/inciduntvelitconsequuntur.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.096914"], ["updated_at", "2019-08-28 01:28:50.096914"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "jan"], ["email", "ozzie@powlowskirice.name"], ["photo", "https://robohash.org/remillumaut.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.099568"], ["updated_at", "2019-08-28 01:28:50.099568"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "blanca"], ["email", "cinthia@nolan.org"], ["photo", "https://robohash.org/corporisetest.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.102072"], ["updated_at", "2019-08-28 01:28:50.102072"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "charolette_quigley"], ["email", "salley@crona.co"], ["photo", "https://robohash.org/voluptatevoluptatemrepellendus.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.105738"], ["updated_at", "2019-08-28 01:28:50.105738"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (33.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "tomika"], ["email", "juan_ko@prohaska.name"], ["photo", "https://robohash.org/fugiatinventoreoptio.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.108295"], ["updated_at", "2019-08-28 01:28:50.108295"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "denis_reinger"], ["email", "pattie@hintzwilliamson.info"], ["photo", "https://robohash.org/utenimex.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.144803"], ["updated_at", "2019-08-28 01:28:50.144803"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "quyen.daugherty"], ["email", "ami@gutkowskifeest.org"], ["photo", "https://robohash.org/utestvero.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.156866"], ["updated_at", "2019-08-28 01:28:50.156866"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "burl"], ["email", "erasmo.muller@bednar.info"], ["photo", "https://robohash.org/doloremnisivel.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.159891"], ["updated_at", "2019-08-28 01:28:50.159891"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "teddy_reinger"], ["email", "carley@shields.net"], ["photo", "https://robohash.org/distinctioexquis.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.164047"], ["updated_at", "2019-08-28 01:28:50.164047"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (34.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "lavelle"], ["email", "merrill@gerlach.info"], ["photo", "https://robohash.org/namcupiditateillo.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.201686"], ["updated_at", "2019-08-28 01:28:50.201686"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "myles.treutel"], ["email", "mickey@marvin.co"], ["photo", "https://robohash.org/dictanesciuntfugit.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.204912"], ["updated_at", "2019-08-28 01:28:50.204912"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "isiah"], ["email", "deon.langworth@mraz.biz"], ["photo", "https://robohash.org/remdistinctiofuga.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.208618"], ["updated_at", "2019-08-28 01:28:50.208618"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "maida"], ["email", "kelli@streich.io"], ["photo", "https://robohash.org/nullaesseminus.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.213704"], ["updated_at", "2019-08-28 01:28:50.213704"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (25.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "collin"], ["email", "bloom_gerlach@howell.io"], ["photo", "https://robohash.org/ipsamminimaet.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.216512"], ["updated_at", "2019-08-28 01:28:50.216512"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "adrian"], ["email", "shon_borer@dickinson.net"], ["photo", "https://robohash.org/consequaturmaximequas.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.245402"], ["updated_at", "2019-08-28 01:28:50.245402"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "tyron.daniel"], ["email", "shandi_spinka@brekkereinger.org"], ["photo", "https://robohash.org/inciduntearumaccusamus.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.251753"], ["updated_at", "2019-08-28 01:28:50.251753"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "piedad"], ["email", "glenn@quitzon.net"], ["photo", "https://robohash.org/suntasperioresest.png?size=300x300&set=set1"], ["created_at", "2019-08-28 01:28:50.255208"], ["updated_at", "2019-08-28 01:28:50.255208"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
