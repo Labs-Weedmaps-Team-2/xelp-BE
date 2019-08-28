@@ -1,12 +1,6 @@
 module Api
   module V1
     class UsersController < ApplicationController
-    def lol
-        @users = User.all
-          @formatted_users = @users.map { |user| format_user(user) }
-  
-          render json: @formatted_users
-    end
      def index
         @users = User.all
         @formatted_users = @users.map { |user| format_user(user) }
