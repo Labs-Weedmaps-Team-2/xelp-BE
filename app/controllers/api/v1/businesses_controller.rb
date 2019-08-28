@@ -39,7 +39,7 @@ module Api
 
             # Never trust parameters from the scary internet, only allow the white list through.
             def business_params
-                params.require(:business).permit(:id, :name, :address, :photo, :phone, :coords)
+                params.permit(:id, :name, :address, :photo, :phone, :coords)
             end
 
             def format_business(business) {
