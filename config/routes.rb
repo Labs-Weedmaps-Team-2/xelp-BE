@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   namespace :api do
     namespace :v1 do
+        get "/auth/github/callback" => "users#lol"
       resources :users
     end
   end
