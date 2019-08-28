@@ -2,7 +2,10 @@ module Api
   module V1
     class UsersController < ApplicationController
      def index
-      render
+      @users = User.all
+        @formatted_users = @users.map { |user| format_user(user) }
+
+        render json: @formatted_users
      end
 
      def create
@@ -24,6 +27,15 @@ module Api
      def user_params
        params.require(:user).permit(:email, :username, :email, :photo)
      end
+
+     def format_user(user)
+      {
+        id: user.id,
+        email: user.email,
+        photo: user.photo,
+        username: user.username
+      }
+    end
      
     end
   end
