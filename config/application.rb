@@ -15,9 +15,11 @@ module Xelp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    ENV['CORS_ORIGINS'] = 'http://localhost:4000, https://development--goofy-edison-2eb1f5.netlify.com/, https://goofy-edison-2eb1f5.netlify.com'
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:4000/'
+        origins '*'
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options]
       end
     end
