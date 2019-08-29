@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/auth/github/callback" => "sessions#create"
+      get "/users/current_user" => "users#current_user"
       resources :users
     end
   end

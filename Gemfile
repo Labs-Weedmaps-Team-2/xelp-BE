@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem 'dotenv-rails', groups: [:development, :test]
 
 ruby '2.6.2'
 
@@ -66,5 +67,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth', '~> 1.9'
 
 gem 'omniauth-github', '~> 1.3'
-
-gem 'activerecord-session_store', '~> 1.1', '>= 1.1.3'

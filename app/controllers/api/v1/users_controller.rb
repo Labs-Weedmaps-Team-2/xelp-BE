@@ -8,18 +8,16 @@ module Api
         render json: @formatted_users
       end
 
-<<<<<<< HEAD
-     def show
-      @user ||= User.find(session[:session_id] ||= params[:id])
-      render json: @user
-    end
-=======
+
       def show
         @user = User.find(params[:id])
-
         render json: format_user(@user)
       end
->>>>>>> 8deb66e2ff635aef80b9996c2837544fb5510e18
+
+      def current_user
+        @current_user = User.find(session[:user_id])
+        render json: @current_user
+      end
 
       def create
         @user = User.new(user_params)
