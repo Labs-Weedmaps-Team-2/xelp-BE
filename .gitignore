@@ -1,4 +1,5 @@
 .vscode
+/config/local_env.yml
 *.rbc
 capybara-*.html
 .rspec
