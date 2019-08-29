@@ -6,20 +6,21 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  # Local development frontend
   allow do
     origins 'http://localhost:4000'
     resource '*', 
       headers: :any, 
       methods: [:get, :post, :put, :patch, :delete, :options]
   end
-
+  # Deployed staging frontend (development branch on GitHub)
   allow do
-    origins 'https://development--goofy-edison-2eb1f5.netlify.com'
+    origins 'https://pensive-mclean-75bb36.netlify.com/'
     resource '*', 
       headers: :any, 
       methods: [:get, :post, :put, :patch, :delete, :options]
   end
-
+  # Deployed production frontend (master branch on GitHub)
   allow do
     origins 'https://goofy-edison-2eb1f5.netlify.com'
     resource '*', 
