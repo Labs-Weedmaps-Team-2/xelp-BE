@@ -10,7 +10,6 @@ module Xelp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
     # Loads environmental variables defined in /config/local_env.yml
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
