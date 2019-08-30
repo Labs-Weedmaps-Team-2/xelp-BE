@@ -5,7 +5,7 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
-Rails.application.config.middleware.insert_before 0, Rack::Cors do
+Rails.application.config.middleware.insert_before 0, Rack::Cors, :debug => true, :logger => (-> { Rails.logger })  do
   # Local development frontend
   allow do
     origins 'http://localhost:4000'
