@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_222246) do
     t.string "latitude"
     t.string "longitude"
     t.string "photo"
+    t.integer "zipcode"
   end
 
   create_table "comments", force: :cascade do |t|
