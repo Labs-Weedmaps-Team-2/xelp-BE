@@ -7,7 +7,10 @@ class SessionsController < ApplicationController
     auth["uid"]) || User.create_with_omniauth(auth)
 
     session[:user_id] = user.id
-
-    render json: user
+    if ENV['RAILS_ENV'] == "development"
+      redirect_to "http://localhost:4000"
+    else
+      redirect_to "https://pensive-mclean-75bb36.netlify.com"
+    end
   end
 end
