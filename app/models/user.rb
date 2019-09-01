@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_many :comments
+
+  has_one_attached :avatar
+  
     def self.create_with_omniauth(auth)
       user = create! do |user|
         user.provider = auth["provider"]
