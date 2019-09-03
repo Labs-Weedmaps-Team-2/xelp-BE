@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/users/current_user" => "users#current_user"
+      get "/search" => "search#index"
       resources :users
     end
   end
