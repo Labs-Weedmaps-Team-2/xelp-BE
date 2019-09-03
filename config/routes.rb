@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :users
       get "/search" => "search#index"
       get "/search/:id" => "search#show"
-      get "/review/:id" => "review#create"
+      post "/review/:id" => "review#create"
       get "/business/reviews/:id" => "review#index"
     end
   end

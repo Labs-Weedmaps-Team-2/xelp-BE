@@ -14,7 +14,6 @@ module Api
           @reviews = []
         end
         puts @reviews
-        # lose user.username scope here
         @reviews = @reviews.map {|review| format_review_json(review)}
 
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
@@ -27,15 +26,15 @@ module Api
 
       def create
         @business = Business.find_by(yelp_id: params[:id]) || self.create_bus(params[:id])
-        
         # @review = Review.new(review: "tessttttting")
         # Review.create_from_review(@review)
         # render json: @review
 
         # current 
-        @review = Review.new(text: "WE GENERATED THIS", business_id: @business.id, user_id: 3)
+        @review = Review.new(text: params[:value], business_id: @business.id, user_id: session[:user_id])
+        puts @review.user.username, "ohhh loard please"
         if @review.save
-          render json: @review, status: :created
+          render json: format_review_json(@review), status: :created
         else
           render json: @review.errors, status: :unprocessable_entity 
         end
