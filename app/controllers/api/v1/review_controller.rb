@@ -9,24 +9,21 @@ module Api
 
         @business = Business.find_by(yelp_id: params[:id]) || nil
         if (@business)
-          @reviews = Review.where(:business_id => @business.id)
+          @reviews = Review.where(:business_id => @business.id).includes(:user)
         else
           @reviews = []
         end
         puts @reviews
-
-        puts "damn ..DAM"
-
+        # lose user.username scope here
         @reviews.each do |review|
-          puts review.review
-          puts review.user_id
+          puts review.user.username, "username here"
         end
 
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
           results = yelp_reviews          
-          render json: results['reviews']+@reviews
+          render json: results['reviews'] + @reviews
         end
       end
 
@@ -37,8 +34,8 @@ module Api
         # Review.create_from_review(@review)
         # render json: @review
 
-        
-        @review = Review.new(review: "shake skake REVIEW 2", business_id: @business.id, user_id: 1)
+        # current 
+        @review = Review.new(text: "WE GENERATED THIS", business_id: @business.id, user_id: 3)
         if @review.save
           render json: @review, status: :created
         else
@@ -48,7 +45,7 @@ module Api
 
       def create_bus(yelp_id)
       #  @business= Review.create_business!(name: 'BUSINESS NAME 3', yelp_id: yelp_id)
-      @review = Review.new(review: "this review will never post", user_id: 1)
+      @review = Review.new(text: "this review will never post", user_id: 1)
       @business = Review.create_from_review(@review, yelp_id)
         @business
       end

@@ -27,18 +27,10 @@ ActiveRecord::Schema.define(version: 2019_09_03_021939) do
     t.string "yelp_id"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "business_id"
-    t.text "comment"
-    t.index ["business_id"], name: "index_comments_on_business_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "business_id"
-    t.text "review"
+    t.text "text"
     t.index ["business_id"], name: "index_reviews_on_business_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -53,8 +45,6 @@ ActiveRecord::Schema.define(version: 2019_09_03_021939) do
     t.string "uid", limit: 500, default: "", null: false
   end
 
-  add_foreign_key "comments", "businesses"
-  add_foreign_key "comments", "users"
   add_foreign_key "reviews", "businesses"
   add_foreign_key "reviews", "users"
 end
