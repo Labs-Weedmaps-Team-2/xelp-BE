@@ -17,12 +17,9 @@ module Api
       def index
         
         uri = URI("https://api.yelp.com/v3/businesses/search?location=#{params[:location]}&term=#{params[:term]}&offset=#{params[:offset]}") 
-        # uri = URI('https://jsonplaceholder.typicode.com/todos/1') 
         res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
-          headers = {'Authorization' => 'Bearer 80ajIrvEtTBOxd6JbBkJEZTQDaMVccdjF8GxbOYVAmKwpQL-jK7JMfIxEWgsvkAYg_YhroxAt087JXJdiSXL9xGRRke4E2RYr89GbcPVx733k33hbtVL4JEHBlptXXYx'}
-          # headers = nil
-          puts "HERE", uri
-          render json: {data: http.get(uri, headers).body}
+          headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
+          render json:  http.get(uri, headers).body
         end
       end
     end
