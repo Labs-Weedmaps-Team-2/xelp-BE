@@ -17,11 +17,24 @@ module Api
       def index
         
         uri = URI("https://api.yelp.com/v3/businesses/search?location=#{params[:location]}&term=#{params[:term]}&offset=#{params[:offset]}") 
+
         res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           render json:  http.get(uri, headers).body
         end
       end
-    end
+
+      def show
+        uri = URI("https://api.yelp.com/v3/businesses/#{params[:id]}")
+
+        Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
+          headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
+          render json:  http.get(uri, headers).body
+        end
+        
+      end
+    end   # end of class
+
   end
+
 end

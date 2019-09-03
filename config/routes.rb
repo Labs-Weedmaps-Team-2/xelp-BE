@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get "/search" => "search#index"
       resources :users
       get "/search" => "search#index"
+      get "/search/:id" => "search#show"
     end
   end
 end
