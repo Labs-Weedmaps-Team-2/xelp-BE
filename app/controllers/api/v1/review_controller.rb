@@ -15,9 +15,7 @@ module Api
         end
         puts @reviews
         # lose user.username scope here
-        @reviews.each do |review|
-          puts review.user.username, "username here"
-        end
+        @reviews = @reviews.map {|review| format_review_json(review)}
 
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
@@ -49,7 +47,16 @@ module Api
       @business = Review.create_from_review(@review, yelp_id)
         @business
       end
+      private
 
+      def format_review_json(review)
+        {
+          id: review.id,
+          text: review.text,
+          user: review.user,
+          busniess: review.business,
+        }
+      end
 
     end # end of class
   end
