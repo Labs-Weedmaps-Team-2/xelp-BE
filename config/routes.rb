@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/users/current_user" => "users#current_user"
       resources :users
+      get "/search" => "search#index"
     end
   end
 end
