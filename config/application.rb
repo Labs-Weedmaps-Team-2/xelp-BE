@@ -31,7 +31,7 @@ module Xelp
     # end
 
         # CORS configuration
-    config.middleware.insert_before 0, Rack::Cors do
+    config.middleware.insert_before 0, Rack::Cors, :debug => true, :logger => (-> { Rails.logger }) do
       # Local development frontend
       allow do
         origins 'http://localhost:4000'
