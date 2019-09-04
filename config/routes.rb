@@ -7,5 +7,8 @@ Rails.application.routes.draw do
       get "/users/current_user" => "users#current_user"
       resources :users
     end
+    resources: businesses do 
+      resources :comments
+    end
   end
 end
