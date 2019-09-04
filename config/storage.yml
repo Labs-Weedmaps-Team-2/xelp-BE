@@ -19,7 +19,7 @@ amazon_dev:
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
   region: <%= ENV['AWS_REGION'] %>
-  bucket: <%= ENV['AWS_BUCKET_PROD'] %>
+  bucket: <%= ENV['AWS_BUCKET_DEV'] %>
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
