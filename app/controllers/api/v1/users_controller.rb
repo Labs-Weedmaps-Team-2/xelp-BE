@@ -25,7 +25,7 @@ module Api
 
       def current_user
         @current_user = User.find(session[:user_id])
-        render json: @current_user
+        render json: format_user(@current_user)
       end
 
       def create
@@ -40,7 +40,7 @@ module Api
 
       def update
         if @user.update(user_params)
-          render json: @user, status: :created
+          render json: format_user(@user), status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
         end
@@ -63,12 +63,22 @@ module Api
         end
 
         def format_user(user)
-          {
-            id: user.id,
-            email: user.email,
-            photo: user.photo,
-            username: user.username
-          }
+          if user.avatar.attached?
+            {
+              id: user.id,
+              email: user.email,
+              photo: user.photo,
+              username: user.username,
+              avatar: url_for(user.avatar)
+            }
+          else
+            {
+              id: user.id,
+              email: user.email,
+              photo: user.photo,
+              username: user.username
+            }
+          end
         end
     end
   end
