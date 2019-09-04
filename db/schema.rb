@@ -31,6 +31,10 @@ ActiveRecord::Schema.define(version: 2019_08_28_170217) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider", limit: 50, default: "", null: false
+    t.string "uid", limit: 500, default: "", null: false
   end
 
+  add_foreign_key "comments", "businesses"
+  add_foreign_key "comments", "users"
 end
