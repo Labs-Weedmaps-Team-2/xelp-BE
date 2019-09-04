@@ -8,6 +8,7 @@ class CreateBusiness < ActiveRecord::Migration[5.2]
       t.string :latitude
       t.string :longitude
       t.string :photo
+      t.string :review
     end
   end
 end
