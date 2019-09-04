@@ -13,4 +13,10 @@ class SessionsController < ApplicationController
       redirect_to "https://pensive-mclean-75bb36.netlify.com"
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    render json: {status: 'OKAY'}
+  end
+
 end

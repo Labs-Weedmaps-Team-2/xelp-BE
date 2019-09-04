@@ -19,7 +19,19 @@ module Xelp
     end
 
     # CORS configuration
-    config.middleware.insert_before 0, Rack::Cors, :debug => true, :logger => (-> { Rails.logger })  do
+    # Master (deployed), Development (deployed), Development(local)
+    # config.middleware.insert_before 0, Rack::Cors do
+    #   allow do
+    #     origins ['https://goofy-edison-2eb1f5.netlify.com','https://pensive-mclean-75bb36.netlify.com','http://localhost:4000']
+    #     resource '*',
+    #       credentials: true,
+    #       headers: :any,
+    #       methods: [:get, :post, :put, :patch, :delete, :options]
+    #   end
+    # end
+
+        # CORS configuration
+    config.middleware.insert_before 0, Rack::Cors, :debug => true, :logger => (-> { Rails.logger }) do
       # Local development frontend
       allow do
         origins 'http://localhost:4000'

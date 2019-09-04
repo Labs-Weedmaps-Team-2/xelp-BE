@@ -1,7 +1,15 @@
 module Api
   module V1
     class UsersController < ApplicationController
+
       before_action :set_user, only: [:show, :update, :destroy]
+
+      rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
+
+      def handle_record_not_found
+        render json: {status: "No current session"}
+      end
+
 
       def index
         @users = User.all

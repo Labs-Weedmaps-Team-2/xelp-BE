@@ -1,5 +1,4 @@
 class Business < ApplicationRecord
-  has_many :comments
-
   has_many_attached :photos
+  has_many :reviews
 end

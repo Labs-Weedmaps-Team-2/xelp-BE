@@ -8,6 +8,10 @@ class CreateBusiness < ActiveRecord::Migration[5.2]
       t.string :latitude
       t.string :longitude
       t.string :photo
+      t.integer :zipcode
+      t.string :yelp_id
+      t.float :rating
+      t.string :price
     end
   end
 end
