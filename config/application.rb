@@ -19,8 +19,8 @@ module Xelp
     end
 
     # CORS configuration
-    config.middleware.insert_before 0, Rack::Cors, do
-      # Master (deployed), Development (deployed), Development(local)
+    # Master (deployed), Development (deployed), Development(local)
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins ['https://goofy-edison-2eb1f5.netlify.com','https://pensive-mclean-75bb36.netlify.com','http://localhost:4000']
         resource '*',
