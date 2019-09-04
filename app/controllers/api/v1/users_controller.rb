@@ -1,11 +1,15 @@
 module Api
   module V1
     class UsersController < ApplicationController
+
+      before_action :set_user, only: [:show, :update, :destroy]
+
       rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
       def handle_record_not_found
         render json: {status: "No current session"}
       end
+
 
       def index
         @users = User.all
@@ -16,7 +20,6 @@ module Api
 
 
       def show
-        @user = User.find(params[:id])
         render json: format_user(@user)
       end
 
@@ -36,8 +39,6 @@ module Api
       end
 
       def update
-        @user = User.find(params[:id])
-
         if @user.update(user_params)
           render json: @user, status: :created
         else
@@ -46,7 +47,7 @@ module Api
       end
 
       def destroy
-        User.find(params[:id]).destroy
+        @user.destroy
         head :no_content
       end
 
@@ -58,7 +59,7 @@ module Api
 
         # Never trust parameters from the scary internet, only allow the white list through.
         def user_params
-          params.require(:user).permit(:username, :email, :photo)
+          params.require(:user).permit(:username, :email, :photo, :avatar)
         end
 
         def format_user(user)

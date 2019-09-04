@@ -69,3 +69,7 @@ gem 'omniauth-github', '~> 1.3'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 
 gem 'omniauth-facebook', '~> 5.0'
+
+gem "aws-sdk-s3", require: false
+
+gem 'pry-rails', :group => :development
