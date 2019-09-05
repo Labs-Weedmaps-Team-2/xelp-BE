@@ -44,20 +44,17 @@ ActiveRecord::Schema.define(version: 2019_09_03_021939) do
     t.string "latitude"
     t.string "longitude"
     t.string "photo"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "business_id"
-    t.text "comment"
-    t.index ["business_id"], name: "index_comments_on_business_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.integer "zipcode"
+    t.string "yelp_id"
+    t.float "rating"
+    t.string "price"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "business_id"
     t.text "text"
+    t.float "rating"
     t.index ["business_id"], name: "index_reviews_on_business_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -73,8 +70,6 @@ ActiveRecord::Schema.define(version: 2019_09_03_021939) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "businesses"
-  add_foreign_key "comments", "users"
   add_foreign_key "reviews", "businesses"
   add_foreign_key "reviews", "users"
 end
