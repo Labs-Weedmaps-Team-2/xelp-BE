@@ -32,7 +32,6 @@ module Api
 
         # current 
         @review = Review.new(text: params[:value], business_id: @business.id, user_id: session[:user_id])
-        # puts @review.user.username, "ohhh loard please"
         if @review.save
           render json: format_review_json(@review), status: :created
         else
