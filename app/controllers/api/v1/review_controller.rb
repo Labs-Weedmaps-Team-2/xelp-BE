@@ -49,12 +49,22 @@ module Api
       private
 
       def format_review_json(review)
-        {
+        if review.user.avatar.attached?
+          {
           id: review.id,
           text: review.text,
           user: review.user,
-          busniess: review.business,
-        }
+          avatar: url_for(review.user.avatar),
+          business: review.business,
+          }
+        else
+          {
+            id: review.id,
+            text: review.text,
+            user: review.user,
+            business: review.business,
+          }
+        end
       end
 
     end # end of class

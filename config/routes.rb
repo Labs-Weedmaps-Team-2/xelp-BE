@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get "/users/current_user" => "users#current_user"
       get "/search" => "search#index"
       resources :users
+      resources :businesses
       get "/search" => "search#index"
       get "/search/:id" => "search#show"
       post "/review/:id" => "review#create"
