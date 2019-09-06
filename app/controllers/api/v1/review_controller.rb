@@ -52,6 +52,7 @@ module Api
         {
           id: review.id,
           text: review.text,
+          rating: review.rating,
           user: review.user,
           busniess: review.business,
         }
