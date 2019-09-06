@@ -19,7 +19,7 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
           results = yelp_reviews          
-          render json: results['reviews'] + @reviews
+          render json:  @reviews.reverse! + results['reviews'] 
         end
       end
 
@@ -49,13 +49,23 @@ module Api
       private
 
       def format_review_json(review)
-        {
+        if review.user.avatar.attached?
+          {
           id: review.id,
           text: review.text,
           rating: review.rating,
           user: review.user,
-          busniess: review.business,
-        }
+          avatar: url_for(review.user.avatar),
+          business: review.business,
+          }
+        else
+          {
+            id: review.id,
+            text: review.text,
+            user: review.user,
+            business: review.business,
+          }
+        end
       end
 
     end # end of class
