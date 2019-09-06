@@ -53,6 +53,7 @@ module Api
           {
           id: review.id,
           text: review.text,
+          rating: review.rating,
           user: review.user,
           avatar: url_for(review.user.avatar),
           business: review.business,
