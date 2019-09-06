@@ -28,7 +28,10 @@ module Api
         # Review.create_from_review(@review)
         # render json: @review
         if session[:user_id]
-          @business = Business.find_by(yelp_id: params[:id]) || self.create_bus(params[:id])
+          @business = Business.find_by(yelp_id: params[:id]) 
+          if @business.nil?
+            @business = self.create_bus(params[:id])
+          end
           @review = Review.new(text: params[:review][:text], business_id: @business.id, user_id: session[:user_id], rating: params[:review][:rating])
           if @review.save
             render json: format_review_json(@review), status: :created
