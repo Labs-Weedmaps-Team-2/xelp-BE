@@ -19,7 +19,7 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
           results = yelp_reviews          
-          render json: results['reviews'] + @reviews
+          render json:  @reviews.reverse! + results['reviews'] 
         end
       end
 
@@ -28,7 +28,10 @@ module Api
         # Review.create_from_review(@review)
         # render json: @review
         if session[:user_id]
-          @business = Business.find_by(yelp_id: params[:id]) || self.create_bus(params[:id])
+          @business = Business.find_by(yelp_id: params[:id]) 
+          if @business.nil?
+            @business = self.create_bus(params[:id])
+          end
           @review = Review.new(text: params[:review][:text], business_id: @business.id, user_id: session[:user_id], rating: params[:review][:rating])
           if @review.save
             render json: format_review_json(@review), status: :created
@@ -49,12 +52,23 @@ module Api
       private
 
       def format_review_json(review)
-        {
+        if review.user.avatar.attached?
+          {
           id: review.id,
           text: review.text,
+          rating: review.rating,
           user: review.user,
-          busniess: review.business,
-        }
+          avatar: url_for(review.user.avatar),
+          business: review.business,
+          }
+        else
+          {
+            id: review.id,
+            text: review.text,
+            user: review.user,
+            business: review.business,
+          }
+        end
       end
 
     end # end of class
