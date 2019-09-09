@@ -15,7 +15,7 @@ class CreateBusiness < ActiveRecord::Migration[5.2]
       t.text :hours
       t.string :category
       t.string :phone
-      t.string :status
+      t.string :status, :default => "pending"
       t.timestamps
     end
   end
