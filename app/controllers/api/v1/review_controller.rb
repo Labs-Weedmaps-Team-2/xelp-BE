@@ -19,7 +19,7 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
           results = yelp_reviews          
-          render json:  @reviews.reverse! + results['reviews'] 
+          render json:  @reviews.reverse! + results['reviews']
         end
       end
 
@@ -69,6 +69,10 @@ module Api
             business: review.business,
           }
         end
+      end
+
+      def review_params
+        params.require(:review).permit(:text)
       end
 
     end # end of class

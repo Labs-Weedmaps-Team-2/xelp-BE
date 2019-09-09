@@ -11,8 +11,8 @@ Rails.application.routes.draw do
       resources :business
       get "/search" => "search#index"
       get "/search/:id" => "search#show"
-      post "/review/:id" => "review#create"
-      get "/business/reviews/:id" => "review#index"
+      post "/business/:id/review" => "review#create"
+      get "/business/:id/reviews" => "review#index"
     end
   end
 end
