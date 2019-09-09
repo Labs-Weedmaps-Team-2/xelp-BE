@@ -12,6 +12,7 @@ class CreateBusiness < ActiveRecord::Migration[5.2]
       t.string :yelp_id
       t.float :rating
       t.string :price
+      t.text :hours
     end
   end
 end
