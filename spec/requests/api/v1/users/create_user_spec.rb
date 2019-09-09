@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Get User", type: :request do
-
+  let(:user_params) { { user: { email: "john@example.com",  provider: "github", uid: '36726553', username: 'johnjoe' } } }
+  
   context 'with omniAuth' do 
     describe 'Create /api/v1/users' do
       # create
@@ -9,7 +10,6 @@ RSpec.describe "Get User", type: :request do
   end
   context 'without omniAuth' do
     describe "Create /api/v1/users" do
-      let(:user_params) { { user: { email: "john@example.com",  provider: "github", uid: '36726553', username: 'johnjoe' } } }
   
       it "creates a new user" do
         post api_v1_users_path, params: user_params
