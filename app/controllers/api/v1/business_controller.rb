@@ -39,7 +39,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def business_params
-          params.permit(:id, :name, :address, :photo, :phone, :coords)
+          params.permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone,)
       end
 
       def format_business(business) {
@@ -56,7 +56,6 @@ module Api
           yelp_id: business.yelp_id,
           rating: business.rating,
           price: business.price,
-          coords: business.coords
       }
       end
     end
