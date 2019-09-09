@@ -15,7 +15,7 @@ class CreateBusiness < ActiveRecord::Migration[5.2]
       t.text :hours
       t.string :category
       t.string :phone
-      t.boolean :status
+      t.string :status
       t.timestamps
     end
   end
