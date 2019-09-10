@@ -27,12 +27,16 @@ module Api
 
       def create
         @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
-
-        @review = Review.new(text: params[:review][:text], rating: params[:review][:rating], user_id: session[:user_id], business_id: @business.id)
-        if @review.save
-          render json: format_review_json(@review), status: :created
+        if Review.reviewable(@business.id, session[:user_id])
+          @review = Review.new(text: params[:review][:text], rating: params[:review][:rating], user_id: session[:user_id], business_id: @business.id)
+          if @review.save
+            render json: format_review_json(@review), status: :created
+          else
+            render json: @review.errors, status: :unprocessable_entity 
+          end
         else
-          render json: @review.errors, status: :unprocessable_entity 
+          @review = Review.find_by(user_id: session[:user_id], business_id: @business.id)
+          render json: format_review_json(@review)
         end
       end
 
@@ -48,9 +52,9 @@ module Api
         temp = @review
         if session[:user_id] == @review.user_id
            @review.destroy
-           json: temp
+           render json: temp
         else
-          json: {status: "not allowed"} ,status: 404
+          render json: {msg: "not allowed", status: 404}
         end
       end
 
