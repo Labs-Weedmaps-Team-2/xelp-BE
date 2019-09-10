@@ -10,7 +10,7 @@ RSpec.describe "Get Review", type: :request do
       post '/api/v1/business/:id/review', params: review_params
       json_body = JSON.parse(response.body).deep_symbolize_keys
 
-      expect(response).to have_http_status(201)
+      expect(response).to have_http_status(200)
       expect(json_body).to include({
         text: "this place is active !!"
       })
