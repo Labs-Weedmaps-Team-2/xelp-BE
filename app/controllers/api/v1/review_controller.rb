@@ -38,11 +38,16 @@ module Api
           else
             render json: @review.errors, status: :unprocessable_entity 
         end
-      else 
-        render json: {status: "must signed in"}
-      end
+        else 
+          render json: {status: "must signed in"}
+        end
       end
 
+      def update 
+
+      end
+
+      # this needs to be refactored out of controller and into review model
       def create_bus(yelp_id)
       #  @business= Review.create_business!(name: 'BUSINESS NAME 3', yelp_id: yelp_id)
       @review = Review.new(text: "this review will never post", user_id: 1)
