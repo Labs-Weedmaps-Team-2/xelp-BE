@@ -44,7 +44,14 @@ module Api
       end
 
       def update 
+        if session[:user_id]
+          @business = Business.find_by(yelp_id: params[:id])
+          @review = Review.update(review_params)
 
+          render json: format_review_json(@review), status: :updated
+        else
+          render json: {status: 'must sign in'}
+        end
       end
 
       # this needs to be refactored out of controller and into review model
@@ -54,6 +61,7 @@ module Api
       @business = Review.create_from_review(@review, yelp_id)
         @business
       end
+
       private
 
       def format_review_json(review)
