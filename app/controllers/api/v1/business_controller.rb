@@ -1,24 +1,24 @@
 module Api
   module V1
-    class BusinessesController < ApplicationController
+    class BusinessController < ApplicationController
       def index
           @businesses = Business.all 
           @formatted_businesses = @businesses.map { |business| format_business(business) }
 
-          render json @formatted_businesses
+          render json: @formatted_businesses
       end
 
       def show
           @business = Business.find(params[:id])
 
-          render json @business
+          render json: @business
       end
       
       def create
           @business = Business.new(business_params)
           @business.save!
 
-          render json @business
+          render json: @business, status: :created
       end
 
       def update
@@ -39,16 +39,24 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def business_params
-          params.permit(:id, :name, :address, :photo, :phone, :coords)
+          params.require(:business).permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone, :hours, :category)
       end
 
       def format_business(business) {
           id: business.id,
           name: business.name,
           address: business.address,
+          city: business.city,
+          state: business.state,
+          zipcode: business.zipcode,
+          latitude: business.latitude,
+          longitude: business.longitude,
           photo: business.photo,
           phone: business.phone,
-          coords: business.coords
+          yelp_id: business.yelp_id,
+          rating: business.rating,
+          price: business.price,
+          category: business.category
       }
       end
     end
