@@ -24,31 +24,20 @@ module Api
       end
 
       def create
-        # @review = Review.new(review: "tessttttting")
-        # Review.create_from_review(@review)
-        # render json: @review
-        # if session[:user_id]
-          # @business = Business.find_by(yelp_id: params[:id]) 
-          # if @business.nil?
-          #   @business = self.create_bus(params[:id])
-          # end
-          @review = Review.new(text: params[:review][:text], business_id: params[:review][:business_id], user_id: params[:review][:user_id], rating: params[:review][:rating])
-          if @review.save
-            render json: format_review_json(@review), status: :created
-          else
-            render json: @review.errors, status: :unprocessable_entity 
+        @review = Review.new(review_params)
+        if @review.save
+          render json: format_review_json(@review), status: :created
+        else
+          render json: @review.errors, status: :unprocessable_entity 
         end
-      # else 
-      #   render json: {status: "must signed in"}
-      # end
       end
+
       def update
         @review = Review.update(review_params)
         render json: @review
       end
 
       def create_bus(yelp_id)
-      #  @business= Review.create_business!(name: 'BUSINESS NAME 3', yelp_id: yelp_id)
       @review = Review.new(text: "this review will never post", user_id: 1)
       @business = Review.create_from_review(@review, yelp_id)
         @business
@@ -77,7 +66,7 @@ module Api
       end
 
       def review_params
-        params.require(:review).permit(:text, :rating)
+        params.require(:review).permit(:text, :rating, :user_id, :business_id)
       end
 
     end # end of class
