@@ -3,6 +3,8 @@ require "net/http"
 module Api
   module V1
     class ReviewController < ApplicationController
+      before_action :set_review, only: [:update, :destroy]
+
       def index
         uri = URI("https://api.yelp.com/v3/businesses/#{params[:id]}/reviews")
 
@@ -24,7 +26,9 @@ module Api
       end
 
       def create
-        @review = Review.new(review_params)
+        @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
+
+        @review = Review.new(text: params[:review][:text], rating: params[:review][:rating], user_id: session[:user_id], business_id: @business.id)
         if @review.save
           render json: format_review_json(@review), status: :created
         else
@@ -33,15 +37,23 @@ module Api
       end
 
       def update
-        @review = Review.update(review_params)
-        render json: @review
+        if @review.update(review_params)
+          render json: @review, status: :created
+        else
+          render json: @review.errors, status: :unprocessable_entity
+        end
       end
 
-      def create_bus(yelp_id)
-      @review = Review.new(text: "this review will never post", user_id: 1)
-      @business = Review.create_from_review(@review, yelp_id)
-        @business
+      def destroy
+        temp = @review
+        if session[:user_id] == @review.user_id
+           @review.destroy
+           json: temp
+        else
+          json: {status: "not allowed"} ,status: 404
+        end
       end
+
       private
 
       def format_review_json(review)
@@ -66,7 +78,11 @@ module Api
       end
 
       def review_params
-        params.require(:review).permit(:text, :rating, :user_id, :business_id)
+        params.require(:review).permit(:text, :rating)
+      end
+
+      def set_review
+        @review = Review.find(params[:id])
       end
 
     end # end of class

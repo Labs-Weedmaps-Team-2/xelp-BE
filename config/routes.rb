@@ -13,7 +13,8 @@ Rails.application.routes.draw do
       get "/search/:id" => "search#show"
       post "/business/:id/review" => "review#create"
       get "/business/:id/reviews" => "review#index"
-      patch "/business/:id/review/:review_id" => "review#update"
+      patch "/reviews/:id" => "review#update"
+      delete "/reviews/:id" => "review#destroy"
     end
   end
 end
