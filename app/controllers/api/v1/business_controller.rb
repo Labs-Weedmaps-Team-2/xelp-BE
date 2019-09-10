@@ -1,10 +1,6 @@
 module Api
   module V1
-    class BusinessesController < ApplicationController
-      skip_before_action :verify_authenticity_token
-
-      before_action :set_business, only: [:show, :update, :destroy]
-
+    class BusinessController < ApplicationController
       def index
         @businesses = Business.all 
         @formatted_businesses = @businesses.map { |business| format_business(business) }
@@ -23,6 +19,20 @@ module Api
         else
           render json: @user.errors, status: :unprocessable_entity 
         end
+          render json: @formatted_businesses
+      end
+
+      def show
+          @business = Business.find(params[:id])
+
+          render json: @business
+      end
+      
+      def create
+          @business = Business.new(business_params)
+          @business.save!
+
+          render json: @business, status: :created
       end
 
 
@@ -47,28 +57,45 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def business_params
-          params.require(:business).permit(:id, :name, :address, :yelp_id, photos: [])
+          params.require(:business).permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone, :hours, :category, photos: [])
       end
 
       def format_business(business)
         if business.photos.attached?
           {
-          id: business.id,
-          name: business.name,
-          address: business.address,
-          photo: business.photo,
-          yelp_id: business.yelp_id,
-          photos: []
+            id: business.id,
+            name: business.name,
+            address: business.address,
+            city: business.city,
+            state: business.state,
+            zipcode: business.zipcode,
+            latitude: business.latitude,
+            longitude: business.longitude,
+            photo: business.photo,
+            phone: business.phone,
+            yelp_id: business.yelp_id,
+            rating: business.rating,
+            price: business.price,
+            category: business.category,
+            photos: []
         } 
         else 
         {
           id: business.id,
           name: business.name,
           address: business.address,
+          city: business.city,
+          state: business.state,
+          zipcode: business.zipcode,
+          latitude: business.latitude,
+          longitude: business.longitude,
           photo: business.photo,
+          phone: business.phone,
           yelp_id: business.yelp_id,
-        }
-        end
+          rating: business.rating,
+          price: business.price,
+          category: business.category
+      }
       end
 
     end
