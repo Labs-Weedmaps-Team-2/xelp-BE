@@ -1,5 +1,5 @@
 example_id                                                  | status | run_time        |
 ----------------------------------------------------------- | ------ | --------------- |
 ./spec/models/review_spec.rb[1:1:1]                         | passed | 0.0101 seconds  |
-./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1] | failed | 0.13158 seconds |
-./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1] | failed | 0.14404 seconds |
+./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1] | failed | 0.1063 seconds  |
+./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1] | failed | 0.07732 seconds |

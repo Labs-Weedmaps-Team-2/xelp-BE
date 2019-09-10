@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe 'Update Review', type: :request do
   describe 'Update /api/v1/business/:id/review/:id' do
@@ -8,7 +8,7 @@ RSpec.describe 'Update Review', type: :request do
 
     it 'updates a review on a business' do
       put '/api/v1/business/:id/review/:id', params: review_params_update 
-      json_body = JSON.parse(response.body).deep_symbolize_keys
+      json_body = JSON.parse(response).deep_symbolize_keys
 
       expect(response).to have_http_status(200)
       expect(json_body).to include({
