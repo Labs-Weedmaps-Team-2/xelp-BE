@@ -16,6 +16,7 @@ module Api
       
       def create
         @business = Business.new(business_params)
+        @business["status"] = "pending"
         if @business.save!
           render json: formatted_businesses(@business), status: :created
         else
@@ -30,7 +31,7 @@ module Api
       end
 
       def update
-        @business = Business.find_by(yelp_id: params[:id])
+        @business = Business.find_by(yelp_id: params[:id]) || Business.new(yelp_id: params[:id])
         if @business.update(business_params)
           render json: format_business(@business), status: :ok
         else
