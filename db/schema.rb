@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_021939) do
     t.text "hours"
     t.string "category"
     t.string "phone"
-    t.string "status", default: "pending"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
