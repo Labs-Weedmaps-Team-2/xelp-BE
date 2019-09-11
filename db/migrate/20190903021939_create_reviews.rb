@@ -5,6 +5,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.references :business, foreign_key: true
       t.text :text
       t.float :rating
+      t.integer :rating
+      t.timestamps
     end
   end
 end
