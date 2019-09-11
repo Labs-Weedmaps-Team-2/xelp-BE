@@ -25,11 +25,19 @@ module Api
       end
 
       def show
+        @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
         uri = URI("https://api.yelp.com/v3/businesses/#{params[:id]}")
 
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
-          render json:  http.get(uri, headers).body
+          if session[:user_id]
+            business_details = JSON.parse http.get(uri, headers).body
+            is_reviewd = Review.reviewable(@business.id, session[:user_id])
+            business_details[:is_reviewed] = !is_reviewd
+            render json:  business_details 
+          else
+           render json:  http.get(uri, headers).body
+          end
         end
         
       end
