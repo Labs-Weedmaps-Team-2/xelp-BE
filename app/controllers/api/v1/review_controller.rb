@@ -51,8 +51,8 @@ module Api
       def destroy
         temp = @review
         if session[:user_id] == @review.user_id
-           @review.destroy
-           render json: temp
+            @review.destroy
+            render json: temp
         else
           render json: {msg: "not allowed", status: 404}
         end
