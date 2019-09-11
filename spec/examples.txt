@@ -1,7 +1,8 @@
 example_id                                                       | status | run_time        |
 ---------------------------------------------------------------- | ------ | --------------- |
-./spec/requests/api/v1/businesses/create_business_spec.rb[1:1:1] | passed | 0.0387 seconds  |
-./spec/requests/api/v1/businesses/get_business_spec.rb[1:1:1]    | passed | 0.01863 seconds |
-./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1]      | failed | 1.39 seconds    |
-./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1]      | failed | 0.00499 seconds |
-./spec/requests/api/v1/users/create_user_spec.rb[1:2:1:1]        | passed | 0.18849 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]        | passed | 0.01734 seconds |
+./spec/requests/api/v1/businesses/create_business_spec.rb[1:1:1] | passed | 0.00811 seconds |
+./spec/requests/api/v1/businesses/get_business_spec.rb[1:1:1]    | passed | 0.07761 seconds |
+./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1]      | failed | 0.1178 seconds  |
+./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1]      | failed | 0.00277 seconds |
+./spec/requests/api/v1/users/create_user_spec.rb[1:2:1:1]        | passed | 0.02454 seconds |
