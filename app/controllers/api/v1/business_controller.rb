@@ -1,7 +1,7 @@
 module Api
   module V1
     class BusinessController < ApplicationController
-      before_action :set_business, only: [:show, :update, :destroy]
+      before_action :set_business, only: [:show, :destroy]
 
       def index
         @businesses = Business.all 
@@ -30,6 +30,7 @@ module Api
       end
 
       def update
+        @business = Business.find_by(yelp_id: params[:id])
         if @business.update(business_params)
           render json: format_business(@business), status: :ok
         else

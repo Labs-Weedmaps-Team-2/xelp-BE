@@ -41,7 +41,6 @@ module Api
       end
 
       def update
-        @review = Review.find_by(yelp_id: params[yelp_id])
         if @review.update(review_params)
           render json: @review, status: :created
         else
