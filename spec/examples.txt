@@ -1,9 +1,5 @@
-example_id                                                       | status | run_time        |
----------------------------------------------------------------- | ------ | --------------- |
-./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]        | passed | 0.01636 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]        | failed | 0.02286 seconds |
-./spec/requests/api/v1/businesses/create_business_spec.rb[1:1:1] | passed | 0.11176 seconds |
-./spec/requests/api/v1/businesses/get_business_spec.rb[1:1:1]    | passed | 0.01175 seconds |
-./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1]      | failed | 0.32013 seconds |
-./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1]      | failed | 0.0044 seconds  |
-./spec/requests/api/v1/users/create_user_spec.rb[1:2:1:1]        | passed | 0.00684 seconds |
+example_id                                                  | status | run_time        |
+----------------------------------------------------------- | ------ | --------------- |
+./spec/models/review_spec.rb[1:1:1]                         | passed | 0.0101 seconds  |
+./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1] | failed | 0.1063 seconds  |
+./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1] | failed | 0.07732 seconds |
