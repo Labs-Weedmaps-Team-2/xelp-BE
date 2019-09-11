@@ -49,14 +49,24 @@ module Api
         end
       end
 
-      def update
-        if @review.update(review_params)
-          render json: @review, status: :created
-        else
-          render json: @review.errors, status: :unprocessable_entity
+      def update 
+        if session[:user_id]
+          @business = Business.find_by(yelp_id: params[:id])
+          @review = Review.update(review_params)
+
+          render json: format_review_json(@review), status: :updated
+        # else
+        #   render json: {status: 'must sign in'}
         end
       end
 
+      # this needs to be refactored out of controller and into review model
+      def create_bus(yelp_id)
+        #  @business= Review.create_business!(name: 'BUSINESS NAME 3', yelp_id: yelp_id)
+        @review = Review.new(text: "this review will never post", user_id: 1)
+        @business = Review.create_from_review(@review, yelp_id)
+        @business
+      end
       def destroy
         temp = @review
         if session[:user_id] == @review.user_id
