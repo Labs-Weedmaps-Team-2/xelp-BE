@@ -48,6 +48,7 @@ module Api
           render json: format_review_json(@review)
         end
       end
+    end
 
       def update 
         if session[:user_id]
@@ -107,7 +108,7 @@ module Api
       def set_review
         @review = Review.find(params[:id])
       end
-
+    
     end # end of class
   end
 end
