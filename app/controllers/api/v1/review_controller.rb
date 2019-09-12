@@ -22,7 +22,6 @@ module Api
           yelp_reviews = JSON.parse http.get(uri, headers).body
           results = yelp_reviews          
           render json:  @reviews.reverse! + results['reviews']
-        end
       end
 
       def create
