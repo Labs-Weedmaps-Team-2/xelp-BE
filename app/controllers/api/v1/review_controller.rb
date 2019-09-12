@@ -43,11 +43,9 @@ module Api
           @review = Review.update(review_params)
 
           render json: format_review_json(@review), status: :updated
-        # else
-        #   render json: {status: 'must sign in'}
         end
       end
-      
+
       private
 
       def format_review_json(review)
