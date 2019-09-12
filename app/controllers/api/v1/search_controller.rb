@@ -31,8 +31,32 @@ module Api
           else
            render json:  business_details
           end
-        end
-        
+        end      
+      end
+      
+      def biz_gallery
+        @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
+        @reviews = Review.where(business_id: @business.id)
+        puts 'GIVE ME MY FREAKEN REVIEWSSSS', @reviews
+
+        uri = URI("https://api.yelp.com/v3/businesses/#{params[:id]}")
+        Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
+          headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
+          business_details = JSON.parse http.get(uri, headers).body
+          puts 'IS THIS TRUE WTF', @business.photos.attached?
+          if @business.photos.attached?
+            @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
+          end
+          if @reviews.length
+            @reviews.each { |review| 
+            if review.photos.attached?
+              review.photos.each {|photo| business_details['photos'] << url_for(photo)}
+            end
+          }
+          end
+          
+          render json: business_details['photos']
+        end 
       end
     end   # end of class
 
