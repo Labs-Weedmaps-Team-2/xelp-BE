@@ -15,7 +15,7 @@ module Api
       end
       
       def create
-        geocoder = OpenCage::Geocoder.new(api_key: 'dfb5f4a59d584936b17d10e9630fcf4f')
+        geocoder = OpenCage::Geocoder.new(api_key: ENV['OPENCAGE_GEOCODER_KEY'])
         results = geocoder.geocode("#{params[:business][:address]} #{params[:business][:city]} #{params[:business][:state]}")
         geo = results.first.coordinates
         @business = Business.new(business_params)
