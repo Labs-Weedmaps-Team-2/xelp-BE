@@ -27,7 +27,9 @@ module Api
       def create
         @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
 
-        @review = Review.new(text: params[:review][:text], rating: params[:review][:rating], user_id: session[:user_id], business_id: @business.id, photos: params[:review][:photos])
+        @review = Review.new(review_params)
+        @review['business_id'] = @business.id
+        @review['user_id'] = session[:user_id]
         if @review.save
           
           render json: format_review_json(@review), status: :created
@@ -75,7 +77,7 @@ module Api
       end
 
       def review_params
-        params.require(:review).permit(:text, :rating, photos: [])
+        params.require(:review).permit(:text, :rating, :user_id, :business_id,  photos: [])
       end
 
       def set_review
