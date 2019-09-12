@@ -20,7 +20,7 @@ module Api
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
-          results = yelp_reviews          
+          results = yelp_reviews       
           render json:  @reviews.reverse! + results['reviews']
       end
 
@@ -60,6 +60,7 @@ module Api
           user: review.user,
           avatar: url_for(review.user.avatar),
           business: review.business,
+          photos: []
           }
         else
           {
@@ -68,7 +69,7 @@ module Api
             user: review.user,
             rating: review.rating,
             business: review.business,
-            photos: review.photos.attached? ? photos_arr : nil
+            photos: review.photos.attached? ? photos_arr : []
           }
         end
       end
