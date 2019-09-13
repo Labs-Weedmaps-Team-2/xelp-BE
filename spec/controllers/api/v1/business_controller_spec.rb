@@ -13,4 +13,13 @@ RSpec.describe Api::V1::BusinessController, type: :controller do
         on(:business)
     end
   end
+  context "GET index" do
+    it "sets @reviews" do
+      get :index
+      expect(response).to be_success
+      expect(response.code).to eq("200")
+    end
+  end
+
+  end
 end
