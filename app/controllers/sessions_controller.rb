@@ -16,7 +16,11 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    render json: {status: 'OKAY'}
+    if ENV['RAILS_ENV'] == "development"
+      redirect_to "http://localhost:4000"
+    else
+      redirect_to "https://pensive-mclean-75bb36.netlify.com"
+    end
   end
 
 end

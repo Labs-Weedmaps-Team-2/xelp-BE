@@ -48,12 +48,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_044445) do
     t.string "yelp_id"
     t.float "rating"
     t.string "price"
-    t.text "hours"
-    t.string "category"
-    t.string "phone"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -61,9 +55,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_044445) do
     t.bigint "business_id"
     t.text "text"
     t.float "rating"
-    t.integer "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["business_id"], name: "index_reviews_on_business_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

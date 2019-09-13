@@ -20,34 +20,24 @@ module Api
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
-          results = yelp_reviews          
+          results = yelp_reviews       
           render json:  @reviews.reverse! + results['reviews']
-        end
       end
 
       def create
-        @business = Business.find_by(yelp_id: params[:id]) || self.create_bus(params[:id])
-        # @review = Review.new(review: "tessttttting")
-        # Review.create_from_review(@review)
-        # render json: @review
-
-        # current 
-        @review = Review.new(text: params[:value], business_id: @business.id, user_id: session[:user_id])
-        if @review.save
-          render json: format_review_json(@review), status: :created
         @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
-        if Review.reviewable(@business.id, session[:user_id])
-          @review = Review.new(text: params[:review][:text], rating: params[:review][:rating], user_id: session[:user_id], business_id: @business.id)
-          if @review.save
-            render json: format_review_json(@review), status: :created
-          else
-            render json: @review.errors, status: :unprocessable_entity 
-          end
+
+        @review = Review.new(review_params)
+        @review['business_id'] = @business.id
+        @review['user_id'] = session[:user_id]
+        if @review.save
+          
+          render json: format_review_json(@review), status: :created
         else
-          @review = Review.find_by(user_id: session[:user_id], business_id: @business.id)
-          render json: format_review_json(@review)
+          render json: @review.errors, status: :unprocessable_entity 
         end
       end
+    end
 
       def update 
         if session[:user_id]
@@ -80,6 +70,9 @@ module Api
       private
 
       def format_review_json(review)
+        if review.photos.attached?
+        photos_arr = review.photos.map {|photo| url_for(photo)} 
+        end
         if review.user.avatar.attached?
           {
           id: review.id,
@@ -88,6 +81,7 @@ module Api
           user: review.user,
           avatar: url_for(review.user.avatar),
           business: review.business,
+          photos: []
           }
         else
           {
@@ -96,18 +90,19 @@ module Api
             user: review.user,
             rating: review.rating,
             business: review.business,
+            photos: review.photos.attached? ? photos_arr : []
           }
         end
       end
 
       def review_params
-        params.require(:review).permit(:text, :rating)
+        params.require(:review).permit(:text, :rating, :user_id, :business_id,  photos: [])
       end
 
       def set_review
         @review = Review.find(params[:id])
       end
-
+    
     end # end of class
   end
 end

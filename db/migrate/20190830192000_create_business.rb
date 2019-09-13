@@ -16,6 +16,7 @@ class CreateBusiness < ActiveRecord::Migration[5.2]
       t.string :category
       t.string :phone
       t.string :status
+      t.string :website
       t.timestamps
     end
   end
