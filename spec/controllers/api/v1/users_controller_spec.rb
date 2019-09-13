@@ -2,13 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
   describe 'user params restrictions' do
-    it do
+    it 'should restrict params' do
       params = {
         user: {
           username: 'John',
-          email: 'johndoe@example.com',
-          photo: 'www.photo.com',
-          avatar: 'www.avatar.com'
+          email: 'johndoe@example.com'
         }
       }
       should permit(:username, :photo, :email, :avatar).
