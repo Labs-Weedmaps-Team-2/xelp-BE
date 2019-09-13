@@ -23,7 +23,16 @@ module Api
           if @business.photos.attached?
             @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
           end
-
+          @reviews = Review.where(business_id: @business.id)
+          puts @reviews, 'FUC'
+          business_details['photo_count'] = 3
+          if @reviews.length
+            @reviews.each { |review|
+            if review.photos.attached?
+              review.photos.each {|photo| business_details['photo_count'] += 1}
+            end
+          }
+          end
           if session[:user_id]
             is_reviewd = Review.reviewable(@business.id, session[:user_id])
             business_details[:is_reviewed] = !is_reviewd
