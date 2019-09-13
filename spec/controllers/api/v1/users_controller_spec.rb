@@ -1,6 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
+  describe 'user params restrictions' do
+    it do
+      params = {
+        user: {
+          username: 'John',
+          email: 'johndoe@example.com',
+          photo: 'www.photo.com',
+          avatar: 'www.avatar.com'
+        }
+      }
+      should permit(:username, :photo, :email, :avatar).
+        for(:create, params: params).
+        on(:user)
+    end
+  end
+  
   # Index, show
   describe "GET index" do
     it "should return a list of users in db" do
