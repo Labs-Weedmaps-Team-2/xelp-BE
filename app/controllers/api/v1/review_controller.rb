@@ -81,7 +81,7 @@ module Api
           user: review.user,
           avatar: url_for(review.user.avatar),
           business: review.business,
-          photos: []
+          photos: photos_arr || []
           }
         else
           {
