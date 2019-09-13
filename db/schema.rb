@@ -48,13 +48,22 @@ ActiveRecord::Schema.define(version: 2019_09_05_044445) do
     t.string "yelp_id"
     t.float "rating"
     t.string "price"
+    t.text "hours"
+    t.string "category"
+    t.string "phone"
+    t.string "status"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "business_id"
     t.text "text"
-    t.float "rating"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["business_id"], name: "index_reviews_on_business_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -67,7 +76,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_044445) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "photo"
+    t.string "photo", default: "https://avatars1.githubusercontent.com/u/20796852?s=400&v=4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "provider", limit: 50, default: "", null: false

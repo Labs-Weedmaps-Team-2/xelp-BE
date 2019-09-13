@@ -90,7 +90,7 @@ module Api
             user: review.user,
             rating: review.rating,
             business: review.business,
-            photos: review.photos.attached? ? photos_arr : []
+            photos: photos_arr || []
           }
         end
       end
