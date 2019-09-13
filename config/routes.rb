@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/users/current_user" => "users#current_user"
-      get "/search" => "search#index"
       resources :users
       resources :business
       get "/search" => "search#index"
+      get "/search/autocomplete" => "search#autocomplete"
       get "/search/:id" => "search#show"
       post "/business/:id/review" => "review#create"
       get "/business/:id/reviews" => "review#index"
