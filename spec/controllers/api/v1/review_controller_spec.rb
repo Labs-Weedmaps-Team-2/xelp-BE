@@ -13,4 +13,18 @@ RSpec.describe Api::V1::ReviewController, type: :controller do
         on(:review)
     end
   end
+  describe 'is reviewable' do
+    review = Review.new
+    it 'should be false' do
+      expect(review.reviewable).to be(false)
+    end
+  end
+  describe "GET index" do
+    let(:review) {Review.create()}
+    it "sets @reviews" do
+      get :index
+      expect(response.body).to include(true)
+    end
+  end
+
 end
