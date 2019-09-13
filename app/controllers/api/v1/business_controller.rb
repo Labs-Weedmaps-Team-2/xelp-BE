@@ -15,10 +15,16 @@ module Api
       end
       
       def create
+        geocoder = OpenCage::Geocoder.new(api_key: ENV['OPENCAGE_GEOCODER_KEY'])
+        results = geocoder.geocode("#{params[:business][:address]} #{params[:business][:city]} #{params[:business][:state]}")
+        geo = results.first.coordinates
         @business = Business.new(business_params)
         @business["status"] = "pending"
+        @business["latitude"] = geo[0]
+        @business["longitude"] = geo[1]
+        
         if @business.save!
-          render json: formatted_businesses(@business), status: :created
+          render json: format_business(@business), status: :created
         else
           render json: @user.errors, status: :unprocessable_entity 
         end
@@ -52,7 +58,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def business_params
-          params.require(:business).permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone, :hours, :category, photos: [])
+          params.require(:business).permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone, :hours, :category, :website, photos: [])
       end
 
       def format_business(business)
