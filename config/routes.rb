@@ -15,8 +15,8 @@ Rails.application.routes.draw do
       post "/business/:id/review" => "review#create"
       get "/business/:id/reviews" => "review#index"
 #       put "/business/:id/review/:id" => "review#update"
-      patch "/reviews/:id" => "review#update"
-      delete "/reviews/:id" => "review#destroy"
+      patch "business/:id/reviews/:id" => "review#update"
+      delete "business/:id/reviews/:id" => "review#destroy"
     end
   end
 end

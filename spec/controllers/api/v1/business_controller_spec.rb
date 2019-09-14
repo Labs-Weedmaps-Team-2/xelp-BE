@@ -20,6 +20,4 @@ RSpec.describe Api::V1::BusinessController, type: :controller do
       expect(response.code).to eq("200")
     end
   end
-
-  end
 end
