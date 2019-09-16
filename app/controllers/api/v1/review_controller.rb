@@ -79,7 +79,7 @@ module Api
           text: review.text,
           rating: review.rating,
           user: review.user,
-          avatar: url_for(review.user.avatar),
+          avatar: url_for(review.user.avatar.variant(resize: "200x200")),
           business: review.business,
           photos: photos_arr || []
           }
