@@ -1,6 +1,9 @@
+require "image_processing/vips"
+
 module Api
   module V1
     class UsersController < ApplicationController
+      include ImageProcessing::Vips
 
       before_action :set_user, only: [:show, :update, :destroy]
 
@@ -69,7 +72,7 @@ module Api
               email: user.email,
               photo: user.photo,
               username: user.username,
-              avatar: url_for(user.avatar)
+              avatar: url_for(user.avatar.variant(resize: "200x200"))
             }
           else
             {
