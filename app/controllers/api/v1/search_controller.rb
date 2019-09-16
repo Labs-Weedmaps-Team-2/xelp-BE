@@ -21,7 +21,28 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           business_details = JSON.parse http.get(uri, headers).body
           if business_details["error"] 
-            puts 'in here can we stop the request?'
+            photo_count = 0
+            business_photos = []
+            @reviews = Review.where(business_id: @business.id)
+            sum_of_rating = 0
+            rating = 0
+            if @reviews.length
+              sum_of_max_rating_of_user_count = @reviews.length * 5
+              @reviews.each { |review|
+              if review.photos.attached?
+                review.photos.each {|photo| photo_count += 1}
+                review.photos.each {|photo| business_photos.push(url_for(photo))}
+              end
+              sum_of_rating += review.rating.to_i
+            }
+            rating = (sum_of_rating * 5) / sum_of_max_rating_of_user_count.to_f
+          end
+          if @business.photos.attached?
+            @business.photos.each {|photo| 
+            business_photos.push(url_for(photo))
+            photo_count += 1
+          }
+          end
             business_obj = {
               name: @business.name,
               categories: [{title: "#{@business.category}"}],
@@ -39,12 +60,17 @@ module Api
                 display_address: ["#{@business.address}", "#{@business.city}, #{@business.state} #{@business.zipcode}"]
               },
               price: '$',
-              photos: [], 
-              reviews: []
+              photos: business_photos, 
+              reviews: [],
+              photo_count: photo_count,
+              rating: rating
             }
+            if session[:user_id]
+              is_reviewd = Review.reviewable(@business.id, session[:user_id])
+              business_obj[:is_reviewed] = !is_reviewd
+            end
             return render json: business_obj
           end
-          puts 'fucc this shit kept going ....'
           if @business.photos.attached?
             @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
           end
@@ -75,6 +101,20 @@ module Api
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           business_details = JSON.parse http.get(uri, headers).body
+          if business_details["error"]
+            business_photos = []
+            if @business.photos.attached?
+              @business.photos.each {|photo| business_photos.push url_for(photo)}
+            end
+            if @reviews.length
+              @reviews.each { |review| 
+              if review.photos.attached?
+                review.photos.each {|photo| business_photos << url_for(photo)}
+              end
+            }
+            end
+            return render json: business_photos
+          end
           if @business.photos.attached?
             @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
           end

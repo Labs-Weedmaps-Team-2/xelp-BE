@@ -8,24 +8,46 @@ module Api
       def index
         uri = URI("https://api.yelp.com/v3/businesses/#{params[:id]}/reviews")
 
-        @business = Business.find_by(yelp_id: params[:id]) || nil
-        if (@business)
-          @reviews = Review.where(:business_id => @business.id).includes(:user)
-        else
-          @reviews = []
-        end
-        puts @reviews
-        @reviews = @reviews.map {|review| format_review_json(review)}
+        # @business = Business.find_by(yelp_id: params[:id]) || nil
+        # if (@business)
+        #   @reviews = Review.where(:business_id => @business.id).includes(:user)
+        # else
+        #   @reviews = []
+        # end
+        # puts @reviews
+        # @reviews = @reviews.map {|review| format_review_json(review)}
 
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
+          puts yelp_reviews, 'CONSOLE HERE '
+          if yelp_reviews["error"]
+            puts 'IN HERE DID THIS STOP IT ? '
+            # FETCH FOR LOCAL REVIEWS
+            @business = Business.find_by(yelp_id: params[:id]) || nil
+            if (@business)
+              @reviews = Review.where(:business_id => @business.id).includes(:user)
+            else
+              @reviews = []
+            end
+            @reviews = @reviews.map {|review| format_review_json(review)}
+            return render json: @reviews.reverse
+          end
+          puts 'GUESS IT DIDNT LOL'
+          @business = Business.find_by(yelp_id: params[:id]) || nil
+          if (@business)
+            @reviews = Review.where(:business_id => @business.id).includes(:user)
+          else
+            @reviews = []
+          end
+          @reviews = @reviews.map {|review| format_review_json(review)}
           results = yelp_reviews       
           render json:  @reviews.reverse! + results['reviews']
+        end
       end
 
       def create
-        @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
+        @business = Business.find_by(yelp_id: params[:id])
 
         @review = Review.new(review_params)
         @review['business_id'] = @business.id
@@ -37,7 +59,6 @@ module Api
           render json: @review.errors, status: :unprocessable_entity 
         end
       end
-    end
 
       def update 
         if session[:user_id]
@@ -50,13 +71,6 @@ module Api
         end
       end
 
-      # this needs to be refactored out of controller and into review model
-      def create_bus(yelp_id)
-        #  @business= Review.create_business!(name: 'BUSINESS NAME 3', yelp_id: yelp_id)
-        @review = Review.new(text: "this review will never post", user_id: 1)
-        @business = Review.create_from_review(@review, yelp_id)
-        @business
-      end
       def destroy
         temp = @review
         if session[:user_id] == @review.user_id
