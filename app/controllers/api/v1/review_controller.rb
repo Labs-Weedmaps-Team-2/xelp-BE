@@ -1,4 +1,5 @@
 require "net/http"
+require "image_processing/vips"
 
 module Api
   module V1
@@ -7,25 +8,34 @@ module Api
 
       def index
         uri = URI("https://api.yelp.com/v3/businesses/#{params[:id]}/reviews")
-
-        @business = Business.find_by(yelp_id: params[:id]) || nil
-        if (@business)
-          @reviews = Review.where(:business_id => @business.id).includes(:user)
-        else
-          @reviews = []
-        end
-        puts @reviews
-        @reviews = @reviews.map {|review| format_review_json(review)}
-
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           yelp_reviews = JSON.parse http.get(uri, headers).body
+          if yelp_reviews["error"]
+            # FETCH FOR LOCAL REVIEWS
+            @business = Business.find_by(yelp_id: params[:id]) || nil
+            if (@business)
+              @reviews = Review.where(:business_id => @business.id).includes(:user)
+            else
+              @reviews = []
+            end
+            @reviews = @reviews.map {|review| format_review_json(review)}
+            return render json: @reviews.reverse
+          end
+          @business = Business.find_by(yelp_id: params[:id]) || nil
+          if (@business)
+            @reviews = Review.where(:business_id => @business.id).includes(:user)
+          else
+            @reviews = []
+          end
+          @reviews = @reviews.map {|review| format_review_json(review)}
           results = yelp_reviews       
           render json:  @reviews.reverse! + results['reviews']
+        end
       end
 
       def create
-        @business = Business.find_by(yelp_id: params[:id]) || Business.create!(yelp_id: params[:id])
+        @business = Business.find_by(yelp_id: params[:id])
 
         @review = Review.new(review_params)
         @review['business_id'] = @business.id
@@ -37,7 +47,6 @@ module Api
           render json: @review.errors, status: :unprocessable_entity 
         end
       end
-    end
 
       def update 
         if session[:user_id]
@@ -45,18 +54,9 @@ module Api
           @review = Review.update(review_params)
 
           render json: format_review_json(@review), status: :updated
-        # else
-        #   render json: {status: 'must sign in'}
         end
       end
 
-      # this needs to be refactored out of controller and into review model
-      def create_bus(yelp_id)
-        #  @business= Review.create_business!(name: 'BUSINESS NAME 3', yelp_id: yelp_id)
-        @review = Review.new(text: "this review will never post", user_id: 1)
-        @business = Review.create_from_review(@review, yelp_id)
-        @business
-      end
       def destroy
         temp = @review
         if session[:user_id] == @review.user_id
@@ -71,7 +71,7 @@ module Api
 
       def format_review_json(review)
         if review.photos.attached?
-        photos_arr = review.photos.map {|photo| url_for(photo)} 
+        photos_arr = review.photos.map {|photo| url_for(photo.variant(resize: "200x200"))} 
         end
         if review.user.avatar.attached?
           {
@@ -79,7 +79,7 @@ module Api
           text: review.text,
           rating: review.rating,
           user: review.user,
-          avatar: url_for(review.user.avatar),
+          avatar: url_for(review.user.avatar.variant(resize: "200x200")),
           business: review.business,
           photos: photos_arr || []
           }

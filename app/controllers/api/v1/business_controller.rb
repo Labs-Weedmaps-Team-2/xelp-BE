@@ -22,6 +22,8 @@ module Api
         @business["status"] = "pending"
         @business["latitude"] = geo[0]
         @business["longitude"] = geo[1]
+        enum = [*'a'..'z', *'A'..'Z', *0..9].shuffle.permutation(13)
+        @business["yelp_id"] = enum.next.join
         
         if @business.save!
           render json: format_business(@business), status: :created

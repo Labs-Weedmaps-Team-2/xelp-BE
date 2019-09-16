@@ -29,6 +29,7 @@ module Xelp
     #       methods: [:get, :post, :put, :patch, :delete, :options]
     #   end
     # end
+    config.active_storage.variant_processor
 
         # CORS configuration
     config.middleware.insert_before 0, Rack::Cors, :debug => true, :logger => (-> { Rails.logger }) do

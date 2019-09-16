@@ -14,7 +14,6 @@ class User < ApplicationRecord
   private
 
   def self.assign_username(auth)
-    puts auth
     if (auth.provider == 'github')
       return auth["info"]["nickname"]
     else
