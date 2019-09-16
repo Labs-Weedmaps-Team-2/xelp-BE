@@ -9,7 +9,27 @@ module Api
 
         res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
-          render json:  http.get(uri, headers).body
+          business_list = JSON.parse http.get(uri, headers).body
+          @business = Business.find_by(state: "CA")giit
+          buz_obj = {
+            categories: [{title: "#{@business.category}"}],
+            name: @business.name,
+            rating: 4.5,
+            location: {
+              address1: @business.address,
+              city: @business.city,
+              zip_code: @business.zipcode,
+              country: 'US',
+              state: @business.state,
+              display_address: ["#{@business.address}", "#{@business.city}, #{@business.state} #{@business.zipcode}"]
+            },
+            coordinates: {
+              'latitude': @business.latitude,
+              'longitude': @business.longitude
+            },
+          }
+          business_list['businesses'].push(buz_obj)
+          render json: business_list  
         end
       end
 
