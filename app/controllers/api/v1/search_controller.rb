@@ -16,7 +16,7 @@ module Api
             categories: [{title: "#{@business.category}"}],
             name: @business.name,
             rating: 4.5,
-            image_url: url_for(@business.photos[0]variant(resize: "200x200"))
+            image_url: url_for(@business.photos[0].variant(resize: "200x200"))
             location: {
               address1: @business.address,
               city: @business.city,
