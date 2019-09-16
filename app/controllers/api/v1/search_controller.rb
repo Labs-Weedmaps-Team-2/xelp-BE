@@ -1,4 +1,4 @@
-require "net/http"
+require "image_processing/vips"
 
 module Api
   module V1
@@ -31,7 +31,7 @@ module Api
               @reviews.each { |review|
               if review.photos.attached?
                 review.photos.each {|photo| photo_count += 1}
-                review.photos.each {|photo| business_photos.push(url_for(photo))}
+                review.photos.each {|photo| business_photos.push(url_for(photo.variant(resize: "200x200")))}
               end
               sum_of_rating += review.rating.to_i
             }
@@ -39,7 +39,7 @@ module Api
           end
           if @business.photos.attached?
             @business.photos.each {|photo| 
-            business_photos.push(url_for(photo))
+            business_photos.push(url_for(photo.variant(resize: "200x200")))
             photo_count += 1
           }
           end
@@ -72,7 +72,7 @@ module Api
             return render json: business_obj
           end
           if @business.photos.attached?
-            @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
+            @business.photos.map {|photo| business_details['photos'] << url_for(photo.variant(resize: "200x200"))}
           end
           @reviews = Review.where(business_id: @business.id)
           business_details['photo_count'] = 3
@@ -104,24 +104,24 @@ module Api
           if business_details["error"]
             business_photos = []
             if @business.photos.attached?
-              @business.photos.each {|photo| business_photos.push url_for(photo)}
+              @business.photos.each {|photo| business_photos.push url_for(photo.variant(resize: "200x200"))}
             end
             if @reviews.length
               @reviews.each { |review| 
               if review.photos.attached?
-                review.photos.each {|photo| business_photos << url_for(photo)}
+                review.photos.each {|photo| business_photos << url_for(photo.variant(resize: "200x200"))}
               end
             }
             end
             return render json: business_photos
           end
           if @business.photos.attached?
-            @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
+            @business.photos.map {|photo| business_details['photos'] << url_for(photo.variant(resize: "200x200"))}
           end
           if @reviews.length
             @reviews.each { |review| 
             if review.photos.attached?
-              review.photos.each {|photo| business_details['photos'] << url_for(photo)}
+              review.photos.each {|photo| business_details['photos'] << url_for(photo.variant(resize: "200x200"))}
             end
           }
           end
