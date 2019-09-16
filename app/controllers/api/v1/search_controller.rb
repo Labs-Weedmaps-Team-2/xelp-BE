@@ -28,7 +28,7 @@ module Api
               'longitude': @business.longitude
             },
           }
-          business_list['businesses'].push(buz_obj)
+          business_list['businesses'].unshift(buz_obj)
           render json: business_list  
         end
       end
