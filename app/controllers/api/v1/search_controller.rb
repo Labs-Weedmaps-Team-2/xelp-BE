@@ -20,6 +20,31 @@ module Api
         Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           business_details = JSON.parse http.get(uri, headers).body
+          if business_details["error"] 
+            puts 'in here can we stop the request?'
+            business_obj = {
+              name: @business.name,
+              categories: [{title: "#{@business.category}"}],
+              coordinates: {
+                'latitude': @business.latitude,
+                'longitude': @business.longitude
+              },
+              display_phone: @business.phone,
+              location: {
+                address1: @business.address,
+                city: @business.city,
+                country: 'US',
+                state: @business.state,
+                zip_code: @business.zipcode,
+                display_address: ["#{@business.address}", "#{@business.city}, #{@business.state} #{@business.zipcode}"]
+              },
+              price: '$',
+              photos: [], 
+              reviews: []
+            }
+            return render json: business_obj
+          end
+          puts 'fucc this shit kept going ....'
           if @business.photos.attached?
             @business.photos.map {|photo| business_details['photos'] << url_for(photo)}
           end
