@@ -10,7 +10,7 @@ module Api
         res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           business_list = JSON.parse http.get(uri, headers).body
-          @business = Business.find_by(state: "CA")giit
+          @business = Business.find_by(state: "CA")
           buz_obj = {
             categories: [{title: "#{@business.category}"}],
             name: @business.name,
