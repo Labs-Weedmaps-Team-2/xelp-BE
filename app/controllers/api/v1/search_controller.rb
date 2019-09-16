@@ -12,9 +12,11 @@ module Api
           business_list = JSON.parse http.get(uri, headers).body
           @business = Business.find_by(state: "CA")
           buz_obj = {
+            id: @business.yelp_id
             categories: [{title: "#{@business.category}"}],
             name: @business.name,
             rating: 4.5,
+            image_url: url_for(@business.photos[0]variant(resize: "200x200"))
             location: {
               address1: @business.address,
               city: @business.city,
