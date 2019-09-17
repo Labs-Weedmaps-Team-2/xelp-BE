@@ -26,7 +26,7 @@ module Api
           minLng = longitudes.min
 
           @business = Business.geo(minLat,maxLat,minLng,maxLng)
-
+        puts @business, 'HERHER ERHEHRHE'
           if @business
             @business.each { |business| 
             buz_obj = {
@@ -45,7 +45,8 @@ module Api
                 'latitude': business.latitude,
                 'longitude': business.longitude
               },
-              id: business.yelp_id
+              id: business.yelp_id,
+              image_url: url_for(business.image_url)
             }
             business_list['businesses'].unshift(buz_obj)
           }
@@ -106,7 +107,8 @@ module Api
               photos: business_photos, 
               reviews: [],
               photo_count: photo_count,
-              rating: rating
+              rating: rating,
+              image_url: url_for(@business.image_url)
             }
             if session[:user_id]
               is_reviewd = Review.reviewable(@business.id, session[:user_id])
