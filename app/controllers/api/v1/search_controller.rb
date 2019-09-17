@@ -45,6 +45,7 @@ module Api
                 'latitude': business.latitude,
                 'longitude': business.longitude
               },
+              id: business.yelp_id
             }
             business_list['businesses'].unshift(buz_obj)
           }
