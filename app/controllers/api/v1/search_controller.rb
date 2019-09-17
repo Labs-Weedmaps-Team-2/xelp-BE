@@ -3,6 +3,7 @@ require "image_processing/vips"
 module Api
   module V1
     class SearchController < ApplicationController
+
       def index
         
         uri = URI("https://api.yelp.com/v3/businesses/search?location=#{params[:location]}&term=#{params[:term]}&categories=#{params[:categories]}&open_now=#{params[:open_now]}&price=#{params[:price]}&offset=#{params[:offset]}") 
@@ -24,8 +25,7 @@ module Api
           maxLng = longitudes.max
           minLng = longitudes.min
 
-
-          @business = Business.where("latitude >= :minLat AND latitude <= :maxLat AND longitude >= :minLng AND longitude <= :maxLng", {minLat: minLat, maxLat: maxLat, minLng: minLng, maxLng: maxLng})
+          @business = Business.geo(minLat,maxLat,minLng,maxLng)
 
           if @business
             @business.each { |business| 
