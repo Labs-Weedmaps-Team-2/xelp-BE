@@ -50,8 +50,7 @@ module Api
 
       def update 
         if session[:user_id]
-          @business = Business.find_by(yelp_id: params[:id])
-          @review = Review.update(review_params)
+          @review.update(review_params)
 
           render json: format_review_json(@review), status: :updated
         end
