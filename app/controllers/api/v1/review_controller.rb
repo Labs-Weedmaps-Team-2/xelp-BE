@@ -101,7 +101,6 @@ module Api
       def set_review
         @review = Review.find(params[:id])
       end
-    
     end # end of class
   end
 end

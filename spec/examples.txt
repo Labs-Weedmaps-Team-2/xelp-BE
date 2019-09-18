@@ -1,17 +1,23 @@
 example_id                                                       | status | run_time        |
 ---------------------------------------------------------------- | ------ | --------------- |
-./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]        | passed | 0.00824 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]        | failed | 0.04904 seconds |
-./spec/models/business_spec.rb[1:1:1]                            | passed | 0.02413 seconds |
-./spec/models/business_spec.rb[1:2:1]                            | passed | 0.01058 seconds |
+./spec/controllers/api/v1/business_controller_spec.rb[1:1:1]     | passed | 0.78532 seconds |
+./spec/controllers/api/v1/business_controller_spec.rb[1:2:1]     | passed | 0.0068 seconds  |
+./spec/controllers/api/v1/review_controller_spec.rb[1:1:1]       | failed | 0.00662 seconds |
+./spec/controllers/api/v1/review_controller_spec.rb[1:2:1]       | failed | 0.00145 seconds |
+./spec/controllers/api/v1/review_controller_spec.rb[1:3:1]       | failed | 0.00201 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]        | passed | 0.02912 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]        | passed | 0.00842 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:3:1]        | passed | 0.00541 seconds |
+./spec/models/business_spec.rb[1:1:1]                            | passed | 0.00191 seconds |
+./spec/models/business_spec.rb[1:2:1]                            | passed | 0.0679 seconds  |
 ./spec/models/login_spec.rb[1:1:1]                               | failed | 0.04679 seconds |
-./spec/models/review_spec.rb[1:1:1]                              | passed | 0.01477 seconds |
-./spec/models/review_spec.rb[1:2:1]                              | passed | 0.00387 seconds |
-./spec/models/review_spec.rb[1:2:2]                              | passed | 0.19098 seconds |
-./spec/models/user_spec.rb[1:1:1]                                | passed | 0.02407 seconds |
-./spec/models/user_spec.rb[1:2:1]                                | passed | 0.00958 seconds |
-./spec/requests/api/v1/businesses/create_business_spec.rb[1:1:1] | failed | 0.18558 seconds |
-./spec/requests/api/v1/businesses/get_business_spec.rb[1:1:1]    | passed | 0.02333 seconds |
-./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1]      | failed | 0.06751 seconds |
-./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1]      | failed | 0.13336 seconds |
-./spec/requests/api/v1/users/create_user_spec.rb[1:2:1:1]        | passed | 0.00792 seconds |
+./spec/models/review_spec.rb[1:1:1]                              | passed | 0.00105 seconds |
+./spec/models/review_spec.rb[1:2:1]                              | passed | 0.13398 seconds |
+./spec/models/review_spec.rb[1:2:2]                              | passed | 0.00351 seconds |
+./spec/models/user_spec.rb[1:1:1]                                | passed | 0.002 seconds   |
+./spec/models/user_spec.rb[1:2:1]                                | passed | 0.00231 seconds |
+./spec/requests/api/v1/businesses/create_business_spec.rb[1:1:1] | passed | 0.75628 seconds |
+./spec/requests/api/v1/businesses/get_business_spec.rb[1:1:1]    | passed | 0.07907 seconds |
+./spec/requests/api/v1/reviews/create_review_spec.rb[1:1:1]      | failed | 0.01354 seconds |
+./spec/requests/api/v1/reviews/update_review_spec.rb[1:1:1]      | failed | 0.00585 seconds |
+./spec/requests/api/v1/users/create_user_spec.rb[1:2:1:1]        | passed | 0.01065 seconds |
