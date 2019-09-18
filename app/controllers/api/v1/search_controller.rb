@@ -116,6 +116,8 @@ module Api
             end
             return render json: business_obj
           end
+           puts 'THIS FUCCEN NAME SHITXS',business_details['name']
+          @business.update(name: business_details['name'], photo: business_details['image_url'])
           if @business.photos.attached?
             @business.photos.map {|photo| business_details['photos'] << url_for(photo.variant(resize: "200x200"))}
           end
