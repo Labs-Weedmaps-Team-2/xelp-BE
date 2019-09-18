@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 #       put "/business/:id/review/:id" => "review#update"
       patch "/reviews/:id" => "review#update"
       delete "/reviews/:id" => "review#destroy"
+      get "/reviews" => "review#show"
     end
   end
 end

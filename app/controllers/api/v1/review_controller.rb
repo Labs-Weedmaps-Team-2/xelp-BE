@@ -34,6 +34,16 @@ module Api
         end
       end
 
+      def show
+        @reviews = Review.where(user_id: session[:user_id])
+        if @reviews
+          @reviews = @reviews.map { |review| format_review_json(review)}
+          render json: @reviews, status: :ok
+        else
+          render json: @reviews.errors, status: 500
+        end
+      end
+
       def create
         @business = Business.find_by(yelp_id: params[:id])
 
