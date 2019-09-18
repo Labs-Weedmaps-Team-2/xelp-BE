@@ -42,7 +42,7 @@ module Xelp
       end
       # Deployed staging frontend (development branch on GitHub)
       allow do
-        origins 'https://pensive-mclean-75bb36.netlify.com'
+        origins 'https://night-lyfe.netlify.com'
         resource '*', 
           credentials: true,
           headers: :any, 
