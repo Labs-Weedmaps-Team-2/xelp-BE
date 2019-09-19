@@ -6,7 +6,7 @@ module Api
 
       def index
         
-        uri = URI("https://api.yelp.com/v3/businesses/search?location=#{params[:location]}&term=#{params[:term]}&categories=#{params[:categories]}&open_now=#{params[:open_now]}&price=#{params[:price]}&offset=#{params[:offset]}") 
+        uri = URI("https://api.yelp.com/v3/businesses/search?location=#{params[:location]}&term=#{params[:term]}&categories=#{params[:categories]}&open_now=#{params[:open_now]}&price=#{params[:price]}&offset=#{params[:offset]}&limit=10&radius=#{params[:radius]}") 
 
         res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
