@@ -26,7 +26,7 @@ module Api
           minLng = longitudes.min
 
           @business = Business.geo(minLat,maxLat,minLng,maxLng, params[:term])
-        puts @business, 'HERHER ERHEHRHE'
+
           if @business
             @business.each { |business| 
             buz_obj = {

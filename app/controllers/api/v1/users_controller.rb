@@ -50,8 +50,16 @@ module Api
       end
 
       def destroy
-        @user.destroy
-        head :no_content
+        if session[:user_id] == @user.id
+          @user.destroy
+          if ENV['RAILS_ENV'] == "development"
+            redirect_to "http://localhost:4000"
+          else
+            redirect_to "https://night-lyfe.netlify.com"
+          end
+        else
+          return render json: {"status": "forbidden"}
+        end
       end
 
       private

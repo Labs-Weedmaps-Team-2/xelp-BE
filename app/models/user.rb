@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :avatar
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   
   def self.create_with_omniauth(auth)
     user = create! do |user|
