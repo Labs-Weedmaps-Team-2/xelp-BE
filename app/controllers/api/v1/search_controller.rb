@@ -12,7 +12,6 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           business_list = JSON.parse http.get(uri, headers).body
 
-          if business_list['businesses']
             latitudes = business_list['businesses'].map { |business| 
             business['coordinates']['latitude']
          }
@@ -51,12 +50,8 @@ module Api
              }
              business_list['businesses'].unshift(buz_obj)
            }        
-           end
-           
+           end          
            render json: business_list  
-          else
-            render json: {"status": "error"}
-          end
         end
       end
 
