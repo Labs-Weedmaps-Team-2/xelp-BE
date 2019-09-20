@@ -111,7 +111,7 @@ module Api
               reviews: [],
               photo_count: photo_count,
               rating: rating,
-              image_url: @business.img_url.attached? ? url_for(@business.img_url) : nil
+              image_url: url_for(@business.img_url)
             }
             if session[:user_id]
               is_reviewd = Review.reviewable(@business.id, session[:user_id])
