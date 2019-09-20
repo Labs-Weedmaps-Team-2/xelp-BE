@@ -47,7 +47,7 @@ module Api
                  'longitude': business.longitude
                },
                id: business.yelp_id,
-               image_url: business.img_url.attached? ? url_for(business.img_url) : nil
+               img_url: business.img_url.attached? ? url_for(business.img_url) : nil
              }
              business_list['businesses'].unshift(buz_obj)
            }        
