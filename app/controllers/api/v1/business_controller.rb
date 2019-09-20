@@ -60,7 +60,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def business_params
-          params.require(:business).permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone, :hours, :category, :website, :image_url, photos: [] )
+          params.require(:business).permit(:id, :name, :address, :city, :state, :zipcode, :photo, :phone, :hours, :category, :website, :img_url, photos: [] )
       end
 
       def format_business(business)
@@ -81,8 +81,7 @@ module Api
           price: business.price,
           category: business.category,
           photos: business.photos,
-          image_url: url_for(business.image_url)
-
+          image_url: business.img_url.attached? ? url_for(business.img_url) : nil
           } 
         else 
           {
@@ -100,7 +99,7 @@ module Api
           rating: business.rating,
           price: business.price,
           category: business.category,
-          image_url: url_for(business.image_url)
+          image_url: business.img_url.attached? ? url_for(business.img_url) : nil
           }
         end
       end

@@ -82,6 +82,12 @@ module Api
         if review.photos.attached?
         photos_arr = review.photos.map {|photo| url_for(photo.variant(resize: "200x200"))} 
         end
+        if review.business.img_url.attached?
+          img_url = url_for(review.business.img_url)
+        else
+          img_url = nil
+        end
+
         if review.user.avatar.attached?
           {
           id: review.id,
@@ -90,7 +96,9 @@ module Api
           user: review.user,
           avatar: url_for(review.user.avatar.variant(resize: "200x200")),
           business: review.business,
-          photos: photos_arr || []
+          photos: photos_arr || [],
+          image_url: img_url
+
           }
         else
           {
@@ -99,7 +107,8 @@ module Api
             user: review.user,
             rating: review.rating,
             business: review.business,
-            photos: photos_arr || []
+            photos: photos_arr || [],
+            image_url: img_url
           }
         end
       end

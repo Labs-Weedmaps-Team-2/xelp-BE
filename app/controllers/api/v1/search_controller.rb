@@ -12,48 +12,51 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           business_list = JSON.parse http.get(uri, headers).body
 
-          latitudes = business_list['businesses'].map { |business| 
-           business['coordinates']['latitude']
-        }
-
-           longitudes = business_list['businesses'].map { |business| 
-              business['coordinates']['longitude']
-        }
-
-          maxLat = latitudes.max
-          minLat = latitudes.min
-          maxLng = longitudes.max
-          minLng = longitudes.min
-
-          @business = Business.geo(minLat,maxLat,minLng,maxLng, params[:term])
-
-          if @business
-            @business.each { |business| 
-            buz_obj = {
-              categories: [{title: "#{business.category}"}],
-              name: business.name,
-              rating: 4.5,
-              location: {
-                address1: business.address,
-                city: business.city,
-                zip_code: business.zipcode,
-                country: 'US',
-                state: business.state,
-                display_address: ["#{business.address}", "#{business.city}, #{business.state} #{business.zipcode}"]
-              },
-              coordinates: {
-                'latitude': business.latitude,
-                'longitude': business.longitude
-              },
-              id: business.yelp_id,
-              image_url: url_for(business.image_url)
-            }
-            business_list['businesses'].unshift(buz_obj)
-          }
-            
+          if business_list['businesses']
+            latitudes = business_list['businesses'].map { |business| 
+            business['coordinates']['latitude']
+         }
+ 
+            longitudes = business_list['businesses'].map { |business| 
+               business['coordinates']['longitude']
+         }
+ 
+           maxLat = latitudes.max
+           minLat = latitudes.min
+           maxLng = longitudes.max
+           minLng = longitudes.min
+ 
+           @business = Business.geo(minLat,maxLat,minLng,maxLng, params[:term])
+ 
+           if @business
+             @business.each { |business| 
+             buz_obj = {
+               categories: [{title: "#{business.category}"}],
+               name: business.name,
+               rating: 4.5,
+               location: {
+                 address1: business.address,
+                 city: business.city,
+                 zip_code: business.zipcode,
+                 country: 'US',
+                 state: business.state,
+                 display_address: ["#{business.address}", "#{business.city}, #{business.state} #{business.zipcode}"]
+               },
+               coordinates: {
+                 'latitude': business.latitude,
+                 'longitude': business.longitude
+               },
+               id: business.yelp_id,
+               image_url: url_for(business.img_url)
+             }
+             business_list['businesses'].unshift(buz_obj)
+           }        
+           end
+           
+           render json: business_list  
+          else
+            render json: {"status": "error"}
           end
-          
-          render json: business_list  
         end
       end
 
@@ -83,7 +86,7 @@ module Api
           end
           if @business.photos.attached?
             @business.photos.each {|photo| 
-            business_photos.push(url_for(photo.variant(resize: "200x200")))
+            business_photos.push(url_for(photo.variant(resize: "500x500")))
             photo_count += 1
           }
           end
@@ -108,7 +111,7 @@ module Api
               reviews: [],
               photo_count: photo_count,
               rating: rating,
-              image_url: url_for(@business.image_url)
+              image_url: url_for(@business.img_url)
             }
             if session[:user_id]
               is_reviewd = Review.reviewable(@business.id, session[:user_id])
