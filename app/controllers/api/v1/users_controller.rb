@@ -76,14 +76,18 @@ module Api
               email: user.email,
               photo: user.photo,
               username: user.username,
-              avatar: url_for(user.avatar.variant(resize: "200x200"))
+              avatar: url_for(user.avatar.variant(resize: "200x200")),
+              city: user.city,
+              state: user.state
             }
           else
             {
               id: user.id,
               email: user.email,
               photo: user.photo,
-              username: user.username
+              username: user.username,
+              city: user.city,
+              state: user.state
             }
           end
         end
