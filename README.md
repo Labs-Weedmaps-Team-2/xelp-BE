@@ -41,8 +41,8 @@ Wireframe: [WIREFRAME_URL] </strong>
 <br>
 
 # Setup
-* Ruby version
-  2.6.2
+* Ruby version 
+'2.6.3'
   
 1. RUN `bundle install`
 
@@ -56,11 +56,16 @@ Wireframe: [WIREFRAME_URL] </strong>
     GITHUB_APP_SECRET: ‘SECRET-KEY-GITHUB’
     GOOGLE_APP_ID: ‘ID'
     GOOGLE_APP_SECRET: ‘SECRET-KEY-GOOGLE'
-    FACEBOOK_APP_ID: ‘ID’
-    FACEBOOK_APP_SECRET: ‘SECRET-KEY-FACEBOOK’
-
+    AWS_ACCESS_KEY_ID: 'AKIAX23UCVVPTCD6TU6R'
+    AWS_SECRET_ACCESS_KEY: 'AWS_SECRET_ACCESS_KEY+'
+    AWS_BUCKET_DEV: 'AWS_BUCKET_DEV'
+    AWS_BUCKET_PROD: 'AWS_BUCKET_PROD'
+    AWS_REGION: 'AWS_REGIONwest-2'
+    YELP_APP_SECRET: 'g1F6wHDfunklBJKdzDj1qUeNomrYsvzcm8n4eDjEwuupG4qN8W4-O4kTfXHDE9iogjDqlPWKkGEWCVIuJ5qEQLZSTffAvMB2yHRSrsT-pziLSRQp4gqpvUaltq5tXXYx',
+    PENCAGE_GEOCODER_KEY: '630fcf4f'
    ```
 
+4. `rails s` after got get the 
 ### For Frontend:
 
 <br/>
