@@ -12,27 +12,29 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           ## parse api response into JSON
           business_list = JSON.parse http.get(uri, headers).body
-          ## for each obj in api response array -> push each latitude value to array
-            latitudes = business_list['businesses'].map { |business| 
-            business['coordinates']['latitude']
-         }
-           ## for each obj in api response array -> push each longitude value to array
-            longitudes = business_list['businesses'].map { |business| 
-               business['coordinates']['longitude']
-         }
+
+          latitudes = []
+          longitudes = []
+          i = 0
+          while i < business_list['businesses'].length
+            latitudes.push(business_list['businesses'][i]['coordinates']['latitude'])
+            longitudes.push(business_list['businesses'][i]['coordinates']['longitudes'])
+            i+= 1
+          end
+
          ## find each arrays extereme. the max & the min
-           maxLat = latitudes.max
-           minLat = latitudes.min
-           maxLng = longitudes.max
-           minLng = longitudes.min
+          maxLat = latitudes.max
+          minLat = latitudes.min
+          maxLng = longitudes.max
+          minLng = longitudes.min
          ## geo = defined scope to find avarage coordinates 
          ## checking our db table for business location within coordinates
-           @business = Business.geo(minLat,maxLat,minLng,maxLng, params[:term])
+          @business = Business.geo(minLat,maxLat,minLng,maxLng, params[:term])
           ## if business list is not empty
-           if @business
+          if @business
             ## -> shape business obj to match the shape of api response obj
-             @business.each { |business| 
-             buz_obj = {
+            @business.each { |business| 
+              buz_obj = {
                categories: [{title: "#{business.category}"}],
                name: business.name,
                rating: 4.5,
