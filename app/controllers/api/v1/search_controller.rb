@@ -18,7 +18,7 @@ module Api
           i = 0
           while i < business_list['businesses'].length
             latitudes.push(business_list['businesses'][i]['coordinates']['latitude'])
-            longitudes.push(business_list['businesses'][i]['coordinates']['longitudes'])
+            longitudes.push(business_list['businesses'][i]['coordinates']['longitude'])
             i+= 1
           end
 
