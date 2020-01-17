@@ -12,21 +12,38 @@ module Api
           headers = {"Authorization" => "Bearer #{ENV["YELP_APP_SECRET"]}"}
           ## parse api response into JSON
           business_list = JSON.parse http.get(uri, headers).body
-
-          latitudes = []
-          longitudes = []
+          
+          latitudes = {
+              max: -Float::INFINITY,
+              min:  Float::INFINITY
+            }
+          longitudes ={
+            max: -Float::INFINITY,
+            min:  Float::INFINITY
+            }
           i = 0
           while i < business_list['businesses'].length
-            latitudes.push(business_list['businesses'][i]['coordinates']['latitude'])
-            longitudes.push(business_list['businesses'][i]['coordinates']['longitude'])
+            if business_list['businesses'][i]['coordinates']['latitude'] > latitudes[:max]
+              latitudes[:max] = business_list['businesses'][i]['coordinates']['latitude']
+            end
+            if business_list['businesses'][i]['coordinates']['latitude'] < latitudes[:min]
+              latitudes[:min] = business_list['businesses'][i]['coordinates']['latitude']
+            end
+            
+            if business_list['businesses'][i]['coordinates']['longitude'] > longitudes[:max]
+              longitudes[:max] = business_list['businesses'][i]['coordinates']['longitude']
+            end
+            if business_list['businesses'][i]['coordinates']['longitude'] < latitudes[:min]
+              longitudes[:min] = business_list['businesses'][i]['coordinates']['longitude']
+            end
             i+= 1
           end
 
-         ## find each arrays extereme. the max & the min
-          maxLat = latitudes.max
-          minLat = latitudes.min
-          maxLng = longitudes.max
-          minLng = longitudes.min
+         ## assign obj vals to variables 
+          maxLat = latitudes[:max]
+          minLat = latitudes[:min]
+          maxLng = longitudes[:max]
+          minLng = longitudes[:min]
          ## geo = defined scope to find avarage coordinates 
          ## checking our db table for business location within coordinates
           @business = Business.geo(minLat,maxLat,minLng,maxLng, params[:term])
